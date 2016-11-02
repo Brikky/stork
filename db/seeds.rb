@@ -3,7 +3,7 @@ Item.delete_all
 Order.delete_all
 OrderItem.delete_all
 
-//create user through web site
+# //create user through web site
 
 10.times do
   item = Item.create({
