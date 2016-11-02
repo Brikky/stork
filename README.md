@@ -2,6 +2,7 @@
 
 ## Description
 * Description: Short paragraph (2-3 sentences) "elevator pitch" describing what your project does
+
 ## Technologies:
 - HTML / CSS/ SASS
 - JavaScript/jQuery
