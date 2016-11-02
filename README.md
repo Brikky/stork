@@ -9,14 +9,17 @@
 
 
 ### Milestone
-![](https://dl.dropboxusercontent.com/s/3hrx0bjrglvo47d/milestones_1024.jpg?dl=0)
+ 1) Items/ Orders
+ 2) Items/ Orders/ Payments
+ 3) Items/ Orders/ Payments/ Quantity
+ 4) Items/ Orders/ Payments/ Quantity/ Users
 
 ### WireFrames:
 
-![](https://dl.dropboxusercontent.com/s/bwm523vgzwk5t1m/models_720.jpg?dl=0)
-![](https://dl.dropboxusercontent.com/s/4p7gqnuuqmjz0u0/wireframe1_720.jpg?dl=0)
-![](https://dl.dropboxusercontent.com/s/19e8ahnq509ki52/wireframe2_720.jpg?dl=0)
-![](https://dl.dropboxusercontent.com/s/a17dplxwebm087f/wireframe3_720.jpg?dl=0)
-![](https://dl.dropboxusercontent.com/s/hfp1f4gzyb2xapb/wireframe4_720.jpg?dl=0)
-![](https://dl.dropboxusercontent.com/s/298qzad9mrwxpss/wireframe5_720.jpg?dl=0)
-![](https://dl.dropboxusercontent.com/s/atck4n85xab6841/wireframe6_720.jpg?dl=0)
+![]()
+![]()
+![]()
+![]()
+![]()
+![]()
+![]()
