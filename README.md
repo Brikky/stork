@@ -2,6 +2,13 @@
 
 ## Description
 * Description: Short paragraph (2-3 sentences) "elevator pitch" describing what your project does
+## Technologies:
+- HTML / CSS/ SASS
+- JavaScript/jQuery
+- Materialize
+- Ruby on Rails 
+- Stripe( for payment )
+- Devise 
 
 ## Milestone
  1. Items/ Orders
