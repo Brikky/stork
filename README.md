@@ -20,16 +20,8 @@
  
 ## Schema:
 #### Sprint 1
-![](https://dl.dropboxusercontent.com/s/1wr08vlwt5claop/modesl.jpg?dl=0)
- 
-#### Sprint 2 
-![](https://dl.dropboxusercontent.com/s/nlvwjc61s643azx/models2.jpg?dl=0)
- 
-#### Sprint 3
-![](https://dl.dropboxusercontent.com/s/d8wrwafkkkhktgg/models3.jpg?dl=0)
+![](https://dl.dropboxusercontent.com/s/flnrhwhdt9rcxzm/final.jpg?dl=0)
 
-#### Sprint 4
-![](https://dl.dropboxusercontent.com/s/bzjhcg9uzc72t2i/models4.jpg?dl=0)
 
 
 
