@@ -6,11 +6,22 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
   </head>
 
   <body>
+    
+
+    <%= render 'partials/nav' %>
+
     <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    
+    <div class="container">
+    <%= link_to order_items_path do %>
+      <i class="material-icons medium shopping-cart">shopping_cart</i>
+    <% end  %>
     <%= yield %>
+    </div>
   </body>
 </html>

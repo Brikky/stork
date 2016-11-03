@@ -1,0 +1,44 @@
+<h1>Order Items</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>Quantity</th>
+      <th>Price</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @order_items.each do |order_item| %>
+      <tr>
+        <td><%= order_item.item.name %></td>
+        <td><%= order_item.quantity %></td>
+        <td><%= order_item.item.price %></td>
+        <td><%= link_to 'Show', order_item %></td>
+        <td><%= link_to 'Edit', edit_order_item_path(order_item) %></td>
+        <td><%= link_to 'Destroy', order_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+
+    <tfoot>
+      <tr>
+        <td>Total:</td> 
+        <td>
+          $<%= Order.find(session[:order_id]).order_total %>
+        </td>
+      </tr>
+    </tfoot>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to order_path(Order.find(session[:order_id])), method: "delete", class: "waves-effect waves-light btn" do%>
+  <i class="material-icons">delete</i> 
+<% end  %>
+
+<%= link_to new_charge_path, class: "waves-effect waves-light btn" do%>
+  <i class="material-icons">credit_card</i> 
+<% end  %>

@@ -14,7 +14,9 @@ class OrdersController < ApplicationController
 
   # GET /orders/new
   def new
-    @order = Order.new
+    @order = Order.create({status: 0})
+    session[:order_id] = @order.id
+    @order.items.create(Item.find(params[:format]).dup.as_json)
   end
 
   # GET /orders/1/edit
