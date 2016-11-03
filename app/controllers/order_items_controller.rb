@@ -4,7 +4,7 @@ class OrderItemsController < ApplicationController
   # GET /order_items
   # GET /order_items.json
   def index
-    @order_items = OrderItem.all
+    @order_items = OrderItem.where(order_id: session[:order_id])
   end
 
   # GET /order_items/1
@@ -56,7 +56,7 @@ class OrderItemsController < ApplicationController
   def destroy
     @order_item.destroy
     respond_to do |format|
-      format.html { redirect_to order_items_url, notice: 'Order item was successfully destroyed.' }
+      format.html { redirect_to order_items_url, notice:  "Removed #{@order_item.item.name}." }
       format.json { head :no_content }
     end
   end
@@ -73,8 +73,8 @@ class OrderItemsController < ApplicationController
         @order = Order.create({status: 0})
         session[:order_id] = @order.id
       end
+      quantity = params[:order_item][:quantity] || 1 
 
-      {order_id: session[:order_id], item_id: params[:order_item][:item]}
-
+      {order_id: session[:order_id], item_id: params[:order_item][:item], quantity: quantity}
     end
 end

@@ -11,6 +11,9 @@
     </div>
   <% end %>
 
+  <%= f.number_field :quantity, step: '1' %>
+  <%= f.hidden_field :item, :value => order_item.item_id %>
+  <%#= f.hidden_field :order, :value => order_item.order_id %>
   <div class="actions">
     <%= f.submit %>
   </div>
