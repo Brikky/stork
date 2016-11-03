@@ -4,6 +4,8 @@
 4. create and pay for order with many quantities of unique items > 
 5. with an account (order history)
 
+-----
+
 1.0. upon visiting user can see all items listed on the home page
 
 -----
