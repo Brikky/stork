@@ -1,7 +1,8 @@
 class ChargesController < ApplicationController
 	def new
-		@order_items = OrderItems.where(order_id: session[:order_id])
-		@order_items.items.sum(:price)
+		# @order_items = OrderItems.where(order_id: session[:order_id])
+		# @order_items.items.sum(:price)
+		@amount = Order.find(session[:order_id]).order_total
 	end
 
 def create

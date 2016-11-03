@@ -35,4 +35,10 @@
 
 <br>
 
-<%= link_to 'New Order Item', new_order_item_path %>
+<%= link_to order_path(Order.find(session[:order_id])), method: "delete", class: "waves-effect waves-light btn" do%>
+  <i class="material-icons">delete</i> 
+<% end  %>
+
+<%= link_to new_charge_path, class: "waves-effect waves-light btn" do%>
+  <i class="material-icons">credit_card</i> 
+<% end  %>
