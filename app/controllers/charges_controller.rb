@@ -6,6 +6,7 @@ class ChargesController < ApplicationController
 	end
 
 def create
+  @order = Order.find(session[:order_id])
   # Amount in cents
   @amount = 500
 
@@ -24,5 +25,7 @@ def create
 rescue Stripe::CardError => e
   flash[:error] = e.message
   redirect_to new_charge_path
+
+  @order.status = 'paid'
 end
 end
