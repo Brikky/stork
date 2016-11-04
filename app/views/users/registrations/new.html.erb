@@ -1,4 +1,4 @@
-<h2>Sign up</h2>
+<h2>Sign up im here</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
@@ -20,6 +20,15 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
+
+  <div class="field">
+      <%= f.text_field :full_address, id: "autocomplete", onFocus: "geolocate()", type: "text" %>
+    </div>
+
+    <div class="field">
+        <%= f.label :address %></td>
+        <%= f.text_field :address, class: "field", id: "street_number", disabled: "true" %>
+    </div>
 
   <div class="actions">
     <%= f.submit "Sign up" %>
