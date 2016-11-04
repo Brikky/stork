@@ -9,6 +9,7 @@
      <!-- <img class="activator" src=""> -->
    </div>
    <div class="card-content">
+    <%= image_tag item.image.url(:thumb) %>
      <span class=" activator grey-text text-darken-4"><%= item.name %><i class="material-icons right">more info</i></span>
      <div>
     <%= form_for OrderItem.new, url: order_items_path do |f| %>
@@ -24,6 +25,7 @@
      <span class="card-title grey-text text-darken-4"><%= item.name %><i class="material-icons right">close</i></span>
      <p><%= item.description %></p>
    </div>
+
  </div>
  </div>
     <% end %>
