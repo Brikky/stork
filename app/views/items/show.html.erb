@@ -1,4 +1,15 @@
 <p id="notice"><%= notice %></p>
 
+<div class="row">
+	<div class="col md5">
+		<h5 class="item-name">
+			<%= @item.name %>
+		</h5>
+		<div class="item-image">
+			<%= image_tag @item.image.url(:medium) %>
+		</div>
+	</div>
+	<div class="col md7"></div>
+</div>
 <%= link_to 'Edit', edit_item_path(@item) %> |
 <%= link_to 'Back', items_path %>
