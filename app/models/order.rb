@@ -1,4 +1,5 @@
 class Order < ApplicationRecord
+  enum status: [:open, :paid, :shipped]
   belongs_to :user, optional: true
   has_many :items, through: :order_items
   has_many :order_items, dependent: :destroy
