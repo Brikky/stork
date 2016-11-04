@@ -1,4 +1,4 @@
-<h1>Order Items</h1>
+<h1>Shopping Cart</h1>
 
 <table>
   <thead>
@@ -12,13 +12,13 @@
 
   <tbody>
     <% @order_items.each do |order_item| %>
+    <% item = order_item.item  %>
       <tr>
-        <td><%= order_item.item.name %></td>
+        <td><%= link_to order_item.item.name, item_path(item) %></td>
         <td><%= order_item.quantity %></td>
         <td><%= number_to_currency(order_item.item.price) %></td>
-        <td><%= link_to 'Show', order_item %></td>
         <td><%= link_to 'Edit', edit_order_item_path(order_item) %></td>
-        <td><%= link_to 'Destroy', order_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'not_interested', order_item, class: "large material-icons", method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
 
@@ -26,7 +26,7 @@
       <tr>
         <td>Total:</td>
         <td>
-          $<%= number_to_currency(current_order.order_total) %>
+          <%= number_to_currency(current_order.order_total) %>
         </td>
       </tr>
     </tfoot>

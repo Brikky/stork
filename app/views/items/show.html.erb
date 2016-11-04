@@ -2,14 +2,24 @@
 
 <div class="row">
 	<div class="col md5">
-		<h5 class="item-name">
-			<%= @item.name %>
-		</h5>
 		<div class="item-image">
 			<%= image_tag @item.image.url(:medium) %>
 		</div>
+		<div class="item-price">
+			<%= number_to_currency(@item.price) %>
+		</div>
 	</div>
-	<div class="col md7"></div>
+	<div class="col md7">
+		<h5 class="item-name">
+			<%= @item.name %>
+		</h5>
+		<p><%= @item.description %></p>
+		
+	</div>
 </div>
 <%= link_to 'Edit', edit_item_path(@item) %> |
 <%= link_to 'Back', items_path %>
+<%= form_for OrderItem.new, url: order_items_path do |f| %>
+      <%= f.hidden_field :item, :value => @item.id %>
+      <%= f.submit 'Add to Cart' %>
+<% end  %>
