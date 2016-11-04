@@ -27,7 +27,7 @@ class OrderItemsController < ApplicationController
     @order_item = OrderItem.create(order_item_params)
     respond_to do |format|
       if @order_item.save
-        format.html { redirect_to items_path, notice:  "#{@order_item.item.name} was successfully created." }
+        format.html { redirect_to items_path, notice:  "#{@order_item.item.name} added to cart" }
         format.json { render :show, status: :created, location: @order_item }
 
       else
