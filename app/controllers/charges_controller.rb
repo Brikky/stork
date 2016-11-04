@@ -1,28 +1,32 @@
 class ChargesController < ApplicationController
-	def new
-		# @order_items = OrderItems.where(order_id: session[:order_id])
-		# @order_items.items.sum(:price)
-		@amount = Order.find(session[:order_id]).order_total
-	end
+  before_action :authenticate_user!
 
 def create
+  @order = Order.find(session[:order_id])
   # Amount in cents
-  @amount = 500
+  @amount = @order.order_total
 
-  customer = Stripe::Customer.create(
-    :email => params[:stripeEmail],
-    :source  => params[:stripeToken]
-  )
+  def create
+    @order = Order.find(session[:order_id])
+    # Amount in cents
+    @amount = @order.order_total * 100
 
-  charge = Stripe::Charge.create(
-    :customer    => customer.id,
-    :amount      => @amount,
-    :description => 'Rails Stripe customer',
-    :currency    => 'usd'
-  )
+    customer = Stripe::Customer.create(
+      email: params[:stripeEmail],
+      source: params[:stripeToken]
+    )
 
-rescue Stripe::CardError => e
-  flash[:error] = e.message
-  redirect_to new_charge_path
-end
+    charge = Stripe::Charge.create(
+      customer: current_user.id,
+      amount: @amount,
+      description: 'Rails Stripe customer',
+      currency: 'usd'
+    )
+
+  rescue Stripe::CardError => e
+    flash[:error] = e.message
+    redirect_to new_charge_path
+
+    @order.status = 'paid'
+  end
 end
