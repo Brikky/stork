@@ -4,11 +4,15 @@
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><%= link_to "Signup", new_user_registration_path %></li>
         <li><%= link_to "Log In", new_user_session_path %></li>
-        <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
+        <li><%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %></li>
+          <li><%= link_to "Sign out", destroy_user_session_path , method: :delete  %></li>
+
+          <li><%= link_to "FB logout", facebook_logout_path, method: :delete %></li>
+
       </ul>
     </div>
   </nav>
-        
+
 <!-- need to create the form in the nav bar
 	conditional to show logout
 	change color bluescale
