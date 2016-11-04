@@ -1,3 +1,5 @@
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["GOOGLE_PLACES_KEY"] %>&libraries=places&callback=initAutocomplete" async defer>
+  </script>
 <h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -20,6 +22,30 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div> 
+
+  <div class="field">
+      <%= f.text_field :full_address, id: "autocomplete", onFocus: "geolocate()", type: "text" %>
+  </div>
+
+    <div class="field">
+        <%= f.hidden_field :address, class: "field", id: "street_number", disabled: "true" %>
+    </div>
+
+    <div class="field">
+        <%= f.hidden_field :city, class: "field", id: "city", disabled: "true" %>
+    </div>
+
+    <div class="field">
+        <%= f.hidden_field :state, class: "field", id: "state", disabled: "true" %>
+    </div>
+
+    <div class="field">
+        <%= f.hidden_field :zipcode, class: "field", id: "postal_code", disabled: "true" %>
+    </div>
+
+    <div class="field">
+        <%= f.hidden_field :country, class: "field", id: "country", disabled: "true" %>
+    </div>
 
   <div class="actions">
     <%= f.submit "Sign up" %>
