@@ -9,8 +9,9 @@
      <!-- <img class="activator" src=""> -->
    </div>
    <div class="card-content">
+
+     <span class=" activator grey-text text-darken-4"><%= item.name %></span>
     <%= image_tag item.image.url(:thumb) %>
-     <span class=" activator grey-text text-darken-4"><%= item.name %><i class="material-icons right">more info</i></span>
      <div>
     <%= form_for OrderItem.new, url: order_items_path do |f| %>
       <%= f.hidden_field :item, :value => item.id %>
@@ -19,10 +20,7 @@
      </div>
    </div>
    <div class="card-reveal">
-       <%= link_to 'Show', item %>
-       <%= link_to 'Edit', edit_item_path(item) %>
-       <%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %>
-     <span class="card-title grey-text text-darken-4"><%= item.name %><i class="material-icons right">close</i></span>
+       <%= link_to 'View Item', item %>
      <p><%= item.description %></p>
    </div>
 
@@ -31,5 +29,3 @@
     <% end %>
   </div>
 </div>
-
-<%= link_to 'New Item', new_item_path %>
