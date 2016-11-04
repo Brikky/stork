@@ -1,9 +1,10 @@
 class ChargesController < ApplicationController
   before_action :authenticate_user!
 
-  def new
-    @amount = Order.find(session[:order_id]).order_total
-  end
+def create
+  @order = Order.find(session[:order_id])
+  # Amount in cents
+  @amount = @order.order_total
 
   def create
     @order = Order.find(session[:order_id])
