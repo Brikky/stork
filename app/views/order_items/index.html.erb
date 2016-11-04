@@ -15,7 +15,7 @@
       <tr>
         <td><%= order_item.item.name %></td>
         <td><%= order_item.quantity %></td>
-        <td><%= order_item.item.price %></td>
+        <td><%= number_to_currency(order_item.item.price) %></td>
         <td><%= link_to 'Show', order_item %></td>
         <td><%= link_to 'Edit', edit_order_item_path(order_item) %></td>
         <td><%= link_to 'Destroy', order_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -24,9 +24,9 @@
 
     <tfoot>
       <tr>
-        <td>Total:</td> 
+        <td>Total:</td>
         <td>
-          $<%= Order.find(session[:order_id]).order_total %>
+          <%= number_to_currency(Order.find(session[:order_id]).order_total) %>
         </td>
       </tr>
     </tfoot>
