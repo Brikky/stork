@@ -72,7 +72,6 @@ class OrderItemsController < ApplicationController
         session[:order_id] = @order.id
       end
       quantity = params[:order_item][:quantity] || 1 
-
       {order_id: session[:order_id], item_id: params[:order_item][:item], quantity: quantity}
     end
 end
