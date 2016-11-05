@@ -24,17 +24,24 @@ class OrderItemsController < ApplicationController
   # POST /order_items
   # POST /order_items.json
   def create
-    @order_item = OrderItem.create(order_item_params)
-    respond_to do |format|
-      if @order_item.save
-        format.html { redirect_to root_path, notice:  "#{@order_item.item.name} added to cart" }
-        format.json { render :show, status: :created, location: @order_item }
+    if OrderItem.exists?(item_id: order_item_params[:item_id])
+      @order_item = OrderItem.find_by(item_id: order_item_params[:item_id])
+      @order_item.update_attribute(:quantity, @order_item.quantity + 1)
 
-      else
-        format.html { render :new }
-        format.json { render json: @order_item.errors, status: :unprocessable_entity }
+    else
+      @order_item = OrderItem.create(order_item_params)
+      respond_to do |format|
+        if @order_item.save
+          format.json { render :show, status: :created, location: @order_item }
+
+        else
+          format.html { render :new }
+          format.json { render json: @order_item.errors, status: :unprocessable_entity }
+        end
       end
     end
+    flash[:notice] = "#{@order_item.item.name} added to cart"
+    redirect_to root_path
   end
 
   # PATCH/PUT /order_items/1
@@ -62,16 +69,17 @@ class OrderItemsController < ApplicationController
   end
 
   private
-    def set_order_item
-      @order_item = OrderItem.find(params[:id])
-    end
 
-    def order_item_params
-      unless Order.exists?(session[:order_id])
-        @order = Order.create({status: 0})
-        session[:order_id] = @order.id
-      end
-      quantity = params[:order_item][:quantity] || 1
-      {order_id: session[:order_id], item_id: params[:order_item][:item], quantity: quantity}
+  def set_order_item
+    @order_item = OrderItem.find(params[:id])
+  end
+
+  def order_item_params
+    unless Order.exists?(session[:order_id])
+      @order = Order.create(status: 0)
+      session[:order_id] = @order.id
     end
+    quantity = params[:order_item][:quantity] || 1
+    { order_id: session[:order_id], item_id: params[:order_item][:item], quantity: quantity }
+  end
 end
