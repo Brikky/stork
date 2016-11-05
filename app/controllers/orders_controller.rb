@@ -59,9 +59,9 @@ class OrdersController < ApplicationController
     @order.destroy
     session[:order_id]=nil;
     respond_to do |format|
-      format.html { redirect_to items_path, notice: "Cart cleared." }
+      format.html { redirect_to root_path, notice: "Cart cleared." }
       format.json { head :no_content }
-    end  
+    end
   end
 
   private

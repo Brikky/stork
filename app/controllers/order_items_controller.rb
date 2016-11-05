@@ -27,7 +27,7 @@ class OrderItemsController < ApplicationController
     @order_item = OrderItem.create(order_item_params)
     respond_to do |format|
       if @order_item.save
-        format.html { redirect_to items_path, notice:  "#{@order_item.item.name} added to cart" }
+        format.html { redirect_to root_path, notice:  "#{@order_item.item.name} added to cart" }
         format.json { render :show, status: :created, location: @order_item }
 
       else
@@ -71,7 +71,7 @@ class OrderItemsController < ApplicationController
         @order = Order.create({status: 0})
         session[:order_id] = @order.id
       end
-      quantity = params[:order_item][:quantity] || 1 
+      quantity = params[:order_item][:quantity] || 1
       {order_id: session[:order_id], item_id: params[:order_item][:item], quantity: quantity}
     end
 end
