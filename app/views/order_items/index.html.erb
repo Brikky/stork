@@ -14,6 +14,7 @@
     <% @order_items.each do |order_item| %>
     <% item = order_item.item  %>
       <tr>
+        <td><%= image_tag item.image.url(:thumb) %></td>
         <td><%= link_to order_item.item.name, item_path(item) %></td>
         <td><%= order_item.quantity %></td>
         <td><%= number_to_currency(order_item.item.price) %></td>
@@ -36,9 +37,9 @@
 <br>
 
 <%= link_to order_path(Order.find(session[:order_id])), method: "delete", class: "waves-effect waves-light btn" do %>
-  <i class="material-icons">delete</i> 
+  <i class="material-icons">delete</i>
 <% end  %>
 
 <%= link_to new_charge_path, class: "waves-effect waves-light btn" do%>
-  <i class="material-icons">credit_card</i> 
+  <i class="material-icons">credit_card</i>
 <% end  %>
