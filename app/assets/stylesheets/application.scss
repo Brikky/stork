@@ -82,3 +82,16 @@
         height: 20px;
         margin-bottom: 2px;
       }
+ .card-box{
+       width:70%;
+       margin:0 auto;
+       padding:10px;
+    }
+
+    @media (min-width: 700px){
+    .card-box{
+       width:40%;
+       display:inline-block;
+       margin:20px;
+    }
+    }
