@@ -1,31 +1,21 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Stork</title>
-    <%= csrf_meta_tags %>
-
-   
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-  <body>
-
-
-    <%= render 'partials/nav' %>
-
-
-
-    <div class="container">
-      <p class="notice"><%= notice %></p>
-    <%= link_to order_items_path do %>
-      <i class="material-icons medium shopping-cart">shopping_cart</i>
-    <% end  %>
-    <%= yield %>
-    </div>
-  </body>
-
+    <head>
+        <title>Stork</title>
+        <%= csrf_meta_tags %>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    </head>
+    <body>
+        <%= render 'partials/nav' %>
+        <div class="container">
+            <p class="notice"><%= notice %></p>
+            <%= link_to order_items_path do %>
+            <i class="material-icons medium shopping-cart">shopping_cart</i>
+            <% end  %>
+            <%= yield %>
+        </div>
+    </body>
 </html>

@@ -1,18 +1,28 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <nav>
     <div class="nav-wrapper light-blue">
-      <a href="/" class="brand-logo">Stork</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><%= link_to "Signup", new_user_registration_path %></li>
-        <li><%= link_to "Log In", new_user_session_path %></li>
-        <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
-      </ul>
+      <div id="header" class="offset-s6 ">
+        <span><a href="/" class="brand-logo left">Stork</a></span>
+
+        <% unless user_signed_in?%>
+          <%= form_for(:user, :url => session_path(:user)) do |f| %>
+              <span class="hide-on-med-and-down"><%= f.text_field :email, class: "header-input" %></span>
+              <span class="hide-on-med-and-down"><%= f.password_field :password, class: "header-input" %></span>
+              <span class="hide-on-med-and-down"><%= f.submit 'Sign In', class: 'btn' %></span>
+            <% end %>
+          <span class = "hide-on-large-only"><%= link_to "Sign In", new_user_session_path %></span>
+          <span><%= link_to "Signup", new_user_registration_path %></span>
+        <% end %>
+
+        <% if user_signed_in? %>
+          <span><%= link_to "Log Out", destroy_user_session_path, method: :delete %></span>
+        <% end %>
+
     </div>
-  </nav>
-        
+  </div>
+</nav>
+
 <!-- need to create the form in the nav bar
-	conditional to show logout
-	change color bluescale
-	signup
-	stretch nav bar to cover page
+
 	add footer
  -->
