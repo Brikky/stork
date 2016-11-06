@@ -2,12 +2,12 @@
 <div class="row">
   <% counter = 0 %>
     <% @items.each do |item| %>
-    <div class="card col s12 m5 offset">
+    <div class="card col s12 m5">
         <div class="card-image waves-effect waves-block waves-light">
+          <%= image_tag item.image.url(:medium), class: "responsive-img activator" %>
         </div>
         <div class="card-content">
             <span class=" activator grey-text text-darken-4"><h5><%= item.name %></h5></span>
-            <%= image_tag item.image.url(:medium), class: "responsive-img" %>
             <div>
                 <%= form_for OrderItem.new, url: order_items_path do |f| %>
                 <%= f.hidden_field :item, :value => item.id %>
@@ -16,6 +16,7 @@
             </div>
         </div>
         <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">item.name<i class="material-icons right">close</i></span>
             <%= link_to 'View Item', item %>
             <p><%= item.description %></p>
         </div>
