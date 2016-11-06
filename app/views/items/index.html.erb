@@ -1,31 +1,28 @@
-
-<h1>Items</h1>
-<div class="container">
-  <div class="row">
+<h1 class="center-align">Welcome to Stork</h1>
+<div class="row">
+  <% counter = 0 %>
     <% @items.each do |item| %>
-    <div class = "card-box">
-      <div class="card">
-   <div class="card-image waves-effect waves-block waves-light">
-     <!-- <img class="activator" src=""> -->
-   </div>
-   <div class="card-content">
+    <div class="card col s12 m5 offset">
+        <div class="card-image waves-effect waves-block waves-light">
+        </div>
+        <div class="card-content">
+            <span class=" activator grey-text text-darken-4"><%= item.name %></span>
+            <%= image_tag item.image.url(:thumb) %>
+            <div>
+                <%= form_for OrderItem.new, url: order_items_path do |f| %>
+                <%= f.hidden_field :item, :value => item.id %>
+                <%= f.submit 'Add to Cart' %>
+                <% end %>
+            </div>
+        </div>
+        <div class="card-reveal">
+            <%= link_to 'View Item', item %>
+            <p><%= item.description %></p>
+        </div>
+    </div>
+      <%= content_tag :div, " ", class: 'col m2' if counter.even? %>
+      <% counter+=1%>
+  <% end %>
 
-     <span class=" activator grey-text text-darken-4"><%= item.name %></span>
-    <%= image_tag item.image.url(:thumb) %>
-     <div>
-    <%= form_for OrderItem.new, url: order_items_path do |f| %>
-      <%= f.hidden_field :item, :value => item.id %>
-      <%= f.submit 'Add to Cart' %>
-    <% end  %>
-     </div>
-   </div>
-   <div class="card-reveal">
-       <%= link_to 'View Item', item %>
-     <p><%= item.description %></p>
-   </div>
 
- </div>
- </div>
-    <% end %>
-  </div>
 </div>
