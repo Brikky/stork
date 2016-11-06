@@ -2,7 +2,7 @@
 <nav>
     <div class="nav-wrapper light-blue">
       <div id="header" class="offset-s6 ">
-        <span><a href="/" class="brand-logo left">Stork</a></span>
+        <span><a href="/" class="brand-logo left"><img class = "logo" src="stork-small.png" alt=""></a></span>
 
         <% unless user_signed_in?%>
           <%= form_for(:user, :url => session_path(:user)) do |f| %>
