@@ -9,7 +9,7 @@ OrderItem.delete_all
   item = Item.create({
     name: Faker::Commerce.product_name,
     description: Faker::Lorem.words(4),
-    price: 3
+    price: 3,
     stock: 10
     })
   # order = Order.create({
