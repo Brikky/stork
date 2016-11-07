@@ -4,18 +4,21 @@
 * Description: Short paragraph (2-3 sentences) "elevator pitch" describing what your project does
 
 ## Technologies:
+
 - HTML / CSS/ SASS
 - JavaScript/jQuery
 - Materialize
 - Ruby on Rails 
 - Stripe( for payment )
-- Devise 
+- Devise
+- Paperclip
+- Rspec ( for testing )
 
 ## Milestone
  1. Items/ Orders
  2. Items/ Orders/ Payments
  3. Items/ Orders/ Payments/ Quantity
- 4. Items/ Orders/ Payments/ Quantity/ Users
+ 4. Items/ Orders/ Payments/ Quantity/ Users/ Location
  
  
 ## Schema:
