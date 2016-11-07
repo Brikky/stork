@@ -31,6 +31,20 @@
   z-index: 10;
 }
 
+.purchase-container{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.purchase-amount{
+  width: 25% !important;
+  min-width: 75px !important;
+}
+::-webkit-input-placeholder {
+ text-align: center;
+}
+
 #autocomplete {
   position: relative !important;
 }
