@@ -14,8 +14,9 @@
   <tbody>
     <% @order_items.each do |order_item| %>
     <% item = order_item.item  %>
+
       <tr>
-        <td><%= image_tag item.image.url(:thumb) %></td>
+        <td><%#= image_tag item.image.url(:thumb) %></td>
         <td><%= link_to order_item.item.name, item_path(item) %></td>
         <td><%= order_item.quantity %></td>
         <td><%= number_to_currency(order_item.item.price) %></td>
