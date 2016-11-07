@@ -79,7 +79,8 @@ class OrderItemsController < ApplicationController
       @order = Order.create(status: 0)
       session[:order_id] = @order.id
     end
-    quantity = params[:order_item][:quantity] || 1
+    quantity = params[:order_item][:quantity]
+    quantity = 1 if quantity.nil? || quantity.empty?
     { order_id: session[:order_id], item_id: params[:order_item][:item], quantity: quantity }
   end
 end

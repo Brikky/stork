@@ -2,28 +2,29 @@
 <div class="row">
   <% counter = 0 %>
     <% @items.each do |item| %>
-     <% if item.stock %>
-      <div class="card col s12 m5">
-          <div class="card-image waves-effect waves-block waves-light">
-            <%= image_tag item.image.url(:medium), class: "responsive-img activator" %>
-          </div>
-          <div class="card-content">
-              <span class=" activator grey-text text-darken-4"><h5><%= item.name %></h5></span>
-              <div>
-                  <%= form_for OrderItem.new, url: order_items_path do |f| %>
-                  <%= f.hidden_field :item, :value => item.id %>
-                  <%= f.submit 'Add to Cart', class: 'btn'%>
-                  <% end %>
-              </div>
-          </div>
-          <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4">item.name<i class="material-icons right">close</i></span>
-              <%= link_to 'View Item', item %>
-              <p><%= item.description %></p>
-          </div>
-      </div>
-        <%= content_tag :div, " ", class: 'col m2' if counter.even? %>
-        <% counter+=1%>
-    <% end %>
+<% if item.stock %>
+    <div class="card col s12 m5">
+        <div class="card-image waves-effect waves-block waves-light">
+          <%= image_tag item.image.url(:medium), class: "responsive-img activator" %>
+        </div>
+        <div class="card-content">
+            <span class=" activator grey-text text-darken-4"><h5><%= item.name %></h5></span>
+            <div>
+                <%= form_for OrderItem.new, url: order_items_path do |f| %>
+                <%= f.hidden_field :item, :value => item.id %>
+                <div class = "purchase-container"><%= f.number_field :quantity, placeholder:'amount', class:'purchase-amount'%>
+                <%= f.submit 'Add to Cart', class: 'btn'%></div>
+                <% end %>
+            </div>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4"><%= item.name %><i class="material-icons right">close</i></span>
+            <%= link_to 'View Item', item %>
+            <p><%= item.description %></p>
+        </div>
+    </div>
+      <%= content_tag :div, " ", class: 'col m2' if counter.even? %>
+      <% counter+=1%>
   <% end %>
+  <% end %> 
 </div>
