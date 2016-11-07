@@ -10,6 +10,7 @@ OrderItem.delete_all
     name: Faker::Commerce.product_name,
     description: Faker::Lorem.words(4),
     price: 3
+    stock: 10
     })
   # order = Order.create({
   #   status:1
