@@ -11,7 +11,8 @@
             <div>
                 <%= form_for OrderItem.new, url: order_items_path do |f| %>
                 <%= f.hidden_field :item, :value => item.id %>
-                <%= f.submit 'Add to Cart', class: 'btn'%>
+                <div class = "purchase-container"><%= f.number_field :quantity, placeholder:'amount', class:'purchase-amount'%>
+                <%= f.submit 'Add to Cart', class: 'btn'%></div>
                 <% end %>
             </div>
         </div>
