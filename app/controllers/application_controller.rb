@@ -8,9 +8,6 @@ class ApplicationController < ActionController::Base
     Order.find(session[:order_id])
   end
 
-  protected
-
-
     protected
 
     def configure_permitted_parameters
