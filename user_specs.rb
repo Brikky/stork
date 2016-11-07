@@ -1,11 +1,11 @@
 require 'app/models/user.rb'
 
 describe User do
-    raw_password = 'password'
+  raw_password = 'password'
   let(:user) do
-      User.create(email: 'admin@example.com',
-                            password: raw_password,
-                            password_confirmation: raw_password})
+    User.create(email: 'admin@example.com',
+                password: raw_password,
+                password_confirmation: raw_password)
   end
 
   it 'has orders' do
@@ -52,11 +52,5 @@ describe User do
 
   it 'has a valid zipcode' do
     expect(user.zipcode).not_to raise_error
-  end
-end
-
-describe '#rise_up?' do
-  it 'one day will rise up' do
-    expect(nation.rise_up?).to be true
   end
 end
