@@ -17,6 +17,7 @@ class Order < ApplicationRecord
   end
 
   def merge_order(order)
+    return if self.id == order.id
     order.order_items.each do |oi|
       oi.order_id = self.id
       self.order_items.push(oi)

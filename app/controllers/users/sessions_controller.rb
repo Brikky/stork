@@ -9,8 +9,11 @@ class Users::SessionsController < Devise::SessionsController
   # POST /resource/sign_in
   def create
     super
-    current_user.current_order.merge_order(Order.find(session[:order_id]))
-    session[:order_id] = current_user.orders.last.id
+    if current_user && session[:order_id]
+        current_user.current_order.merge_order(Order.find(session[:order_id]))
+      else
+      session[:order_id] = current_user.orders.last.id
+    end
   end
 
   # DELETE /resource/sign_out
