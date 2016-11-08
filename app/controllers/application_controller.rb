@@ -4,9 +4,17 @@ class ApplicationController < ActionController::Base
 
  before_filter :configure_permitted_parameters, if: :devise_controller?
 
-  def current_order
-    Order.find(session[:order_id])
-  end
+ def current_order
+   if current_user
+     return current_user.orders.last
+   elsif session[:order_id].nil?
+     order = Order.create({status: 0})
+     session[:order_id] = order.id
+     order
+   else
+     Order.find(session[:order_id])
+   end
+end
 
     protected
 

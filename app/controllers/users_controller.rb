@@ -1,14 +1,6 @@
 class UsersController < ApplicationController
   # before_action :set_user, only: [:show, :edit, :update, :destroy]
 
-
-
-  def after_login
-    if session[:order_id]
-      Order.find(session[:order_id]).update(user_id:@user.id)
-    end
-    explode
- end
   # GET /users
   # GET /users.json
   def index
