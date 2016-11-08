@@ -38,7 +38,7 @@
 
 <br>
 
-<%= link_to order_path(Order.find(session[:order_id])), method: "delete", class: "waves-effect waves-light btn" do %>
+<%= link_to order_path(current_order), method: "delete", class: "waves-effect waves-light btn" do %>
   <i class="material-icons">delete</i>
 <% end  %>
 
