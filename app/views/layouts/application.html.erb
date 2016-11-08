@@ -10,13 +10,24 @@
     </head>
     <body>
         <%= render 'partials/nav' %>
-        <div class="container">
+        <div class="container main-container">
             <p class="notice"><%= notice %></p>
             <p class="alert"><%= alert %></p>
             <%= link_to order_items_path do %>
-            <i class="material-icons medium shopping-cart">shopping_cart</i>
+            <i class="material-icons medium shopping-cart cart-icon light-blue-text text-darken-2">shopping_cart</i>
             <% end  %>
             <%= yield %>
         </div>
+        <!-- FOOTER -->
+        <div class="page-footer stork-footer light-blue">
+          <div class="footer-copyright">
+            <div class="container">
+            © 2016 Copyright Text
+            <a class="grey-text text-lighten-4 right footer-link" href="#!">More Links</a>
+            <a class="grey-text text-lighten-4 right footer-link" href="#!">About</a>
+            </div>
+          </div>
+        </div>
     </body>
+
 </html>
