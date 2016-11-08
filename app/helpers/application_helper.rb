@@ -2,7 +2,7 @@ module ApplicationHelper
 
   def current_order
     if current_user
-      current_user.orders.last
+        current_user.orders.find_by(status: 'open')
     elsif session[:order_id].nil?
       order = Order.create({status: 0})
       session[:order_id] = order.id
