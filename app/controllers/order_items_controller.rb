@@ -4,7 +4,14 @@ class OrderItemsController < ApplicationController
   # GET /order_items
   # GET /order_items.json
   def index
-    @order_items = OrderItem.where(order_id: session[:order_id])
+    orders = Order.where(user_id:current_user.id)
+    open_orders = orders.where(status:0)
+
+    @order_items = []
+    open_orders.each do |order|
+      @order_items << OrderItem.where(order_id:order.id)
+    end
+    @order_items
   end
 
   # GET /order_items/1
