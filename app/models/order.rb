@@ -5,7 +5,7 @@ class Order < ApplicationRecord
   has_many :order_items, dependent: :destroy
 
   def order_total
-    if status == 'open'
+    if open?
       order_items.map { |oi| oi.item[:price] * oi[:quantity].to_f }.reduce(0.0, :+)
     else
       order_items.map { |oi| oi[:purchase_price] * oi[:quantity].to_f }.reduce(0.0, :+)
