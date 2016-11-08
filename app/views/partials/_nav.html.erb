@@ -6,9 +6,9 @@
 
         <% unless user_signed_in?%>
           <%= form_for(:user, :url => session_path(:user)) do |f| %>
-              <span class="hide-on-med-and-down"><%= f.text_field :email, class: "header-input" %></span>
-              <span class="hide-on-med-and-down"><%= f.password_field :password, class: "header-input" %></span>
-              <span class="hide-on-med-and-down"><%= f.submit 'Sign In', class: 'btn' %></span>
+              <span class="hide-on-med-and-down login-field"><%= f.text_field :email, class: "header-input", placeholder: "Email" %></span>
+              <span class="hide-on-med-and-down login-field"><%= f.password_field :password, class: "header-input", placeholder: "Password" %></span>
+              <span class="hide-on-med-and-down"><%= f.submit 'Sign In', class: 'btn login-btn' %></span>
             <% end %>
           <span class = "hide-on-large-only"><%= link_to "Sign In", new_user_session_path %></span>
           <span><%= link_to "Signup", new_user_registration_path %></span>
