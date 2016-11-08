@@ -4,7 +4,7 @@ class OrderItemsController < ApplicationController
   # GET /order_items
   # GET /order_items.json
   def index
-    @order_items = OrderItem.where(order_id: session[:order_id])
+    @order_items = current_order.order_items
   end
 
   # GET /order_items/1
@@ -30,15 +30,7 @@ class OrderItemsController < ApplicationController
       @order_item.update_attribute(:quantity, @order_item.quantity + 1)
     else
       @order_item = OrderItem.create(order_item_params)
-      respond_to do |format|
-        if @order_item.save
-          format.html { }
-          format.json { render :show, status: :created, location: @order_item }
-        else
-          format.html { render :new }
-          format.json { render json: @order_item.errors, status: :unprocessable_entity }
-        end
-      end
+
     end
     flash[:notice] = "#{@order_item.item.name} added to cart"
     redirect_to root_path
@@ -75,12 +67,8 @@ class OrderItemsController < ApplicationController
   end
 
   def order_item_params
-    unless Order.exists?(session[:order_id])
-      @order = Order.create(status: 0)
-      session[:order_id] = @order.id
-    end
     quantity = params[:order_item][:quantity]
     quantity = 1 if quantity.nil? || quantity.empty?
-    { order_id: session[:order_id], item_id: params[:order_item][:item], quantity: quantity }
+    { order_id: current_order.id, item_id: params[:order_item][:item], quantity: quantity }
   end
 end
