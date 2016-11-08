@@ -4,6 +4,7 @@ class ChargesController < ApplicationController
   def new
     @order = Order.find(session[:order_id])
     # Amount in cents
+    @order.update({status: 1})
   end
 
   def create
