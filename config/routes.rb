@@ -10,4 +10,6 @@ Rails.application.routes.draw do
 
   root to: 'items#index'
 
+  get "/about", to: "pages#show" , as:"about"
+
 end
