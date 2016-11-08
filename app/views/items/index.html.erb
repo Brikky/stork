@@ -3,7 +3,7 @@
   <% counter = 0 %>
     <% @items.each do |item| %>
 <% if item.stock %>
-    <div class="card col s12 m5">
+    <div class="card col s12 m5" id=<%= "item#{item.id}" %>>
         <div class="card-image waves-effect waves-block waves-light">
           <%= image_tag item.image.url(:medium), class: "responsive-img activator" %>
         </div>

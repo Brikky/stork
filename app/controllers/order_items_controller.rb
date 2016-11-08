@@ -33,7 +33,7 @@ class OrderItemsController < ApplicationController
 
     end
     flash[:notice] = "#{@order_item.item.name} added to cart"
-    redirect_to root_path
+    redirect_to root_path anchor:"item#{@order_item.item.id}"
   end
 
   # PATCH/PUT /order_items/1
