@@ -24,9 +24,8 @@ class OrderItemsController < ApplicationController
   # POST /order_items
   # POST /order_items.json
   def create
-    @order_items = OrderItem.where(order_id: session[:order_id])
-    if @order_items.exists?(item_id: order_item_params[:item_id])
-      @order_item = @order_items.find_by(item_id: order_item_params[:item_id])
+    if current_order.order_items.exists?(item_id: order_item_params[:item_id])
+      @order_item = current_order.order_items.find_by(item_id: order_item_params[:item_id])
       @order_item.update_attribute(:quantity, @order_item.quantity + 1)
     else
       @order_item = OrderItem.create(order_item_params)
