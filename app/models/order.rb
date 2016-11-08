@@ -13,7 +13,11 @@ class Order < ApplicationRecord
   end
 
   def handle_payment
-    order_items.each { |oi| oi.purchase_price = oi.item.price; oi.save }
+    order_items.each do |oi|
+      oi.purchase_price = oi.item.price
+      oi.stock = io.stock -1
+      oi.save
+    end
   end
 
   def merge_order(order)
