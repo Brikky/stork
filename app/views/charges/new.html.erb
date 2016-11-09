@@ -5,9 +5,13 @@
         <p><%= flash[:error] %></p>
       </div>
     <% end %>
-    <label class="amount">
-      <span>Amount: <%= number_to_currency(@order.order_total) %></span>
-    </label>
+    <p class="amount">
+      <strong>Amount:</strong> <%= number_to_currency(@order.order_total) %>
+    </p>   
+    <p>
+      <strong>Shipping to:</strong><br> 
+      <%= @order.user.full_address %>
+    </p>
   </article>
 
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
