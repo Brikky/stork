@@ -198,6 +198,6 @@ end
 end
 
 100.times do
-  OrderItem.create(order_id: rand(1..20), item_id: rand(1..23), quantity: rand(1..5))
+  OrderItem.create(order_id: rand(1..20), item_id: rand(1..20), quantity: rand(1..5))
 end
 Order.all.each(&:handle_payment)
