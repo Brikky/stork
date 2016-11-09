@@ -30,6 +30,17 @@ RSpec.describe Item, :type => :model do
       item.stock = 10
       expect(item.stock).to eq(10)
     end
+
+    it "should belong to many order-items" do
+     t = Item.reflect_on_association(:order_items)
+     t.macro.should == :has_many
+    end
+
+    it "should belong to many orders" do
+     t = Item.reflect_on_association(:orders)
+     t.macro.should == :has_many
+    end
+
   end
 
 end
