@@ -10,7 +10,7 @@ class Users::SessionsController < Devise::SessionsController
   def create
     super
     if current_user && session[:order_id]
-        current_user.current_order.merge_order(Order.find(session[:order_id]))
+        current_user.current_order.merge_order(Order.find(session[:order_id]["id"]))
       else
       session[:order_id] = current_user.current_order
     end
