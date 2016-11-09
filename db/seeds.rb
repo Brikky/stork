@@ -197,7 +197,7 @@ end
   Order.create(user_id: alivia.id, status: 'paid')
 end
 
-200.times do
-  OrderItem.create(order_id: rand(1..20), item_id: rand(1..23), quantity: rand(5..20))
+100.times do
+  OrderItem.create(order_id: rand(1..20), item_id: rand(1..23), quantity: rand(1..5))
 end
 Order.all.each(&:handle_payment)
