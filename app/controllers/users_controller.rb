@@ -11,6 +11,9 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
+    orders = @user.orders
+    @processed_orders = orders.where({status: 'paid' })
+    open_orders = @user.orders
   end
 
   # GET /users/new

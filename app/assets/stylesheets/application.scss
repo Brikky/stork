@@ -13,121 +13,197 @@
  *= require_tree .
  *= require_self
  */
-
 @import "materialize";
 
-.nav-wrapper{
-	width: 100%
+body {
+    background: beige;
 }
 
-.brand-logo{
-	margin-left: 10px
+.row {
+    display: flex;
+    align-content: space-between !important;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.align-bottom{
+  display:flex;
+  align-items: baseline;
+}
+
+.nav-wrapper {
+    width: 100%;
+}
+
+.card-img {
+    width: 300px !important;
+    height: 250px !important;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+.card {
+    margin: 2vh 0 !important;
+}
+
+.brand-logo {
+    margin-left: 10px;
 }
 
 .shopping-cart {
-	position: fixed;
-	bottom: 10px;
-	right: 10px;
-  z-index: 10;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 10;
 }
 
-.purchase-container{
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+.purchase-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
-.purchase-amount{
-  width: 25% !important;
-  min-width: 75px !important;
+
+.purchase-amount {
+    width: 25% !important;
+    min-width: 75px !important;
 }
+
 ::-webkit-input-placeholder {
- text-align: center;
+    text-align: center;
 }
 
 #autocomplete {
-  position: relative !important;
+    position: relative !important;
 }
 
 #map {
-        height: 100%;
-      }
-      /* Optional: Makes the sample page fill the window. */
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
+    height: 100%;
+}
+/* Optional: Makes the sample page fill the window. */
+body,
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
 
- #locationField, #controls {
-        position: relative;
-        width: 480px;
-      }
-      #autocomplete {
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        width: 99%;
-      }
-      .label {
-        text-align: right;
-        font-weight: bold;
-        width: 100px;
-        color: #303030;
-      }
-      #address {
-        border: 1px solid #000090;
-        background-color: #f0f0ff;
-        width: 480px;
-        padding-right: 2px;
-      }
-      #address td {
-        font-size: 10pt;
-      }
-      .field {
-        width: 99%;
-      }
-      .slimField {
-        width: 80px;
-      }
-      .wideField {
-        width: 200px;
-      }
-      #locationField {
-        height: 20px;
-        margin-bottom: 2px;
-      }
-    @media (min-width: 700px){
-    .card-box{
-       width:40%;
-       display:inline-block;
-       margin:20px;
-    }
-    }
-.header-input{
-  width: 250px !important;
-  height: 30px !important;
+#controls,
+#locationField {
+    position: relative;
+    width: 480px;
 }
-#header{
-  display: flex;
-  justify-content: space-around;
+
+#autocomplete {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 99%;
 }
-.logo{
-  height: 100px;
-  margin-top: -20px;
+
+.label {
+    text-align: right;
+    font-weight: bold;
+    width: 100px;
+    color: #303030;
+}
+
+#address {
+    border: 1px solid #000090;
+    background-color: #f0f0ff;
+    width: 480px;
+    padding-right: 2px;
+}
+
+#address td {
+    font-size: 10pt;
+}
+
+.field {
+    width: 99%;
+}
+
+.slimField {
+    width: 80px;
+}
+
+.wideField {
+    width: 200px;
+}
+
+#locationField {
+    height: 20px;
+    margin-bottom: 2px;
+}
+@media (min-width: 700px) {
+    .card-box {
+        width: 40%;
+        display: inline-block;
+        margin: 20px;
+    }
+}
+
+.header-input {
+    width: 250px !important;
+    height: 30px !important;
+}
+
+#header {
+    display: flex;
+    justify-content: space-around;
+}
+
+.logo {
+    height: 100px;
+    margin-top: -20px;
 }
 
 .login-field {
-  background:beige;
-  color:black;
-  padding:5px;
+    background: beige;
+    color: black;
+    padding: 5px;
 }
 
 .login-btn {
-  height: 30px;  
-  line-height: 30px;
+    height: 30px;
+    line-height: 30px;
 }
 
-.bumper{
-  height: 5vw;
+.stork-footer {
+    padding-top: 0;
+    bottom: 0;
+    vertical-align: middle;
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+}
+
+.stock-remaining {
+    margin-top: 0;
+}
+
+.item-name {
+    margin-bottom: 0;
+}
+
+.item-show-row {
+    min-height: 350px;
+}
+
+.cart-icon {
+    margin: 0 20px 0 0;
+    background: white;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.footer-link {
+    margin-left: 20px;
+}
+
+.main-container {
+    min-height: 100%;
+}
+
+.bumper {
+    height: 2vh;
 }

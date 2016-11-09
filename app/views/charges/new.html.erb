@@ -6,13 +6,13 @@
       </div>
     <% end %>
     <label class="amount">
-      <span>Amount: <%= number_to_currency(@order.order_total) %></span>
+      <span>Amount: <%= (@order.order_total) %></span>
     </label>
   </article>
 
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="pk_test_joaFlTzLZCRVUbSVCOk4KK3c"
           data-description="Complete Your Order"
-          data-amount=<%= @order.order_total %>
+          data-amount=<%= @order.order_total*100 %>
           data-locale="auto"></script>
 <% end %>

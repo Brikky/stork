@@ -1,4 +1,44 @@
-<p id="notice"><%= notice %></p>
+<h3>Order Number <%= params[:id]%></h3>
+<h5 class = "grey-text">Completed <%= @order.updated_at.strftime("%d %b. %Y")%> </h5>
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Item</th>
+      <th>Quantity</th>
+      <th>Price</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
 
-<%= link_to 'Edit', edit_order_path(@order) %> |
+  <tbody>
+    <% @order.order_items.each do |order_item| %>
+    <% item = order_item.item  %>
+
+      <tr>
+        <td></td>
+        <td><%= link_to order_item.item.name, item_path(item) %></td>
+        <td><%= order_item.quantity %></td>
+        <td><%= number_to_currency(order_item.purchase_price) %></td>
+
+      </tr>
+    <% end %>
+
+    <tfoot>
+      <tr>
+        <td>Total:</td>
+        <td>
+          <%= number_to_currency(current_order.order_total) %>
+        </td>
+      </tr>
+    </tfoot>
+  </tbody>
+</table>
+
+<br>
+
+
+
+
+
 <%= link_to 'Back', orders_path %>

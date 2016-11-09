@@ -24,16 +24,15 @@ class OrderItemsController < ApplicationController
   # POST /order_items
   # POST /order_items.json
   def create
-    @order_items = OrderItem.where(order_id: session[:order_id])
-    if @order_items.exists?(item_id: order_item_params[:item_id])
-      @order_item = @order_items.find_by(item_id: order_item_params[:item_id])
-      @order_item.update_attribute(:quantity, @order_item.quantity + 1)
+    if current_order.order_items.exists?(item_id: order_item_params[:item_id])
+      @order_item = current_order.order_items.find_by(item_id: order_item_params[:item_id])
+      @order_item.update_attribute(:quantity, @order_item.quantity + order_item_params[:quantity].to_i)
     else
       @order_item = OrderItem.create(order_item_params)
 
     end
     flash[:notice] = "#{@order_item.item.name} added to cart"
-    redirect_to root_path
+    redirect_to root_path anchor:"item#{@order_item.item.id}"
   end
 
   # PATCH/PUT /order_items/1
@@ -41,7 +40,7 @@ class OrderItemsController < ApplicationController
   def update
     respond_to do |format|
       if @order_item.update(order_item_params)
-        format.html { redirect_to @order_item, notice: 'Order item was successfully updated.' }
+        format.html { redirect_to order_items_path, notice: 'Order item was successfully updated.' }
         format.json { render :show, status: :ok, location: @order_item }
       else
         format.html { render :edit }

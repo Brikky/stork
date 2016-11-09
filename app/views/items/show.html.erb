@@ -1,25 +1,40 @@
 <p id="notice"><%= notice %></p>
 
-<div class="row">
-	<div class="col md5">
+<div class="row item-show-row">
+	<div class="col m5">
 		<div class="item-image">
 			<%= image_tag @item.image.url(:medium), class: 'responsive-img' %>
 		</div>
 		<div class="item-price">
-			<%= number_to_currency(@item.price) %>
+			<p><strong>Price: </strong> <%= number_to_currency(@item.price) %></p>
 		</div>
+		<span><%= form_for OrderItem.new, url: order_items_path do |f| %>
+		<span><%= link_to 'Back', root_path, class: 'btn' %></span>
+		      <%= f.hidden_field :item, :value => @item.id %>
+		      <%= f.submit 'Add to Cart', class: 'btn' %>
+		<% end  %>
+		</span>
 	</div>
-	<div class="col md7">
+	<div class="col m7">
 		<h5 class="item-name">
 			<%= @item.name %>
 		</h5>
+		<h6 class="stock-remaining <%= @item.stock >= 5 ? 'grey-text' : 'red-text' %>"><%= @item.stock %> remaining</h6>
 		<p><%= @item.description %></p>
 
 	</div>
 </div>
-<span><%= form_for OrderItem.new, url: order_items_path do |f| %>
-  <span><%= link_to 'Back', root_path, class: 'btn' %></span>
-      <%= f.hidden_field :item, :value => @item.id %>
-      <%= f.submit 'Add to Cart', class: 'btn' %>
-<% end  %></span>
 <div class='bumper'> </div>
+
+<h5>Other Selections: </h5><br>
+<hr>
+<div class="row align-bottom">
+	<% @suggestions.each do |suggestion| %>
+		<div class="col m2">
+			<%= link_to item_path(suggestion) do %>
+			  <%= image_tag suggestion.image.url(:medium), class: 'responsive-img' %>
+			<% end %>
+			<p><%= link_to suggestion.name, item_path(suggestion) %></p>
+		</div>
+	<% end  %>
+</div>

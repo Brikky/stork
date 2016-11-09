@@ -1,1 +1,2 @@
-<h2>Thanks, you paid <strong>$<%= number_to_currency(@amount) %></strong>!</h2>
+<h5 class="center-align">Thanks, you paid <strong><%= number_to_currency(@order.order_total) %></strong>!</h5>
+<h6 class = "center-align">You can view your receipt <%= link_to 'here', order_path(@order)%>.</h6>
