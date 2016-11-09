@@ -33,29 +33,27 @@ items = [
 
 Item.create(items)
 
+sherri = User.create(first_name: 'sherri', last_name: 'admin', email: 'sherri@admin.com', password: '123456', full_address: Faker::Address.street_address + Faker::Address.city + Faker::Address.state + Faker::Address.zip.to_s + Faker::Address.country)
+brenden = User.create(first_name: 'brenden', last_name: 'admin', email: 'chris@admin.com', password: '123456', full_address: Faker::Address.street_address + Faker::Address.city + Faker::Address.state + Faker::Address.zip.to_s + Faker::Address.country)
+chris =   User.create(first_name: 'chirs', last_name: 'admin', email: 'chris@admin.com', password: '123456', full_address: Faker::Address.street_address + Faker::Address.city + Faker::Address.state + Faker::Address.zip.to_s + Faker::Address.country)
+alivia = User.create(first_name: 'alivia', last_name: 'admin', email: 'alivia@admin.com', password: '123456', full_address: Faker::Address.street_address + Faker::Address.city + Faker::Address.state + Faker::Address.zip.to_s + Faker::Address.country)
 
-sherri = User.create({first_name:"sherri" , last_name:"admin", email:"sherri@admin.com" ,password: "123456", full_address: Faker::Address.street_address + Faker::Address.city + Faker::Address.state + Faker::Address.zip.to_s + Faker::Address.country })
-brenden = User.create({first_name:"brenden", last_name:"admin", email:"chris@admin.com" ,password:"123456"  , full_address: Faker::Address.street_address + Faker::Address.city + Faker::Address.state + Faker::Address.zip.to_s + Faker::Address.country })
-chris =   User.create({first_name:"chirs", last_name:"admin", email:"chris@admin.com" ,password: "123456" , full_address: Faker::Address.street_address + Faker::Address.city + Faker::Address.state + Faker::Address.zip.to_s + Faker::Address.country }) 
-alivia =   User.create({first_name:"alivia", last_name:"admin", email:"alivia@admin.com" ,password: "123456", full_address: Faker::Address.street_address + Faker::Address.city + Faker::Address.state + Faker::Address.zip.to_s + Faker::Address.country }) 
-
-
-5.times do 
-  Order.create({user_id: sherri.id, status: 1})
+5.times do
+  Order.create(user_id: sherri.id, status: 'paid')
 end
 
-5.times do 
-  Order.create({user_id: brenden.id, status: 1})
+5.times do
+  Order.create(user_id: brenden.id, status: 'status')
 end
 
-5.times do 
-  Order.create({user_id: chris.id, status: 1})
+5.times do
+  Order.create(user_id: chris.id, status: 'status')
 end
 
-5.times do 
-  Order.create({user_id: alivia.id, status: 1})
+5.times do
+  Order.create(user_id: alivia.id, status: 'status')
 end
 
 200.times do
-  OrderItem.create({order_id: rand(1..20), item_id: rand(1..23)})
+  OrderItem.create(order_id: rand(1..20), item_id: rand(1..23))
 end
