@@ -121,7 +121,7 @@ items = [
     description: 'mango fruit chew',
     price: 1.29,
     stock: 20,
-    image: File.new(Rails.root.to_s + '/app/assets/images/mango-Hi-Chew.png')
+    image: File.new(Rails.root.to_s + '/app/assets/images/mango-hi-chew.png')
   },
   {
     name: 'Green Apple Hi-Chew',
