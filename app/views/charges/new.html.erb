@@ -5,14 +5,24 @@
         <p><%= flash[:error] %></p>
       </div>
     <% end %>
-    <label class="amount">
-      <span>Amount: <%= (@order.order_total) %></span>
-    </label>
   </article>
-
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="pk_test_joaFlTzLZCRVUbSVCOk4KK3c"
-          data-description="Complete Your Order"
-          data-amount=<%= @order.order_total*100 %>
-          data-locale="auto"></script>
+  <div class="container charges-new">
+    <div class="row">
+      <div class="col offset-m1">
+        <p class="charges-new-info">
+          <strong>Amount:</strong> <%= number_to_currency(@order.order_total) %>
+        </p>   
+        <p class="charges-new-info">
+          <strong>Shipping Address:</strong><br> 
+          <%= @order.user.full_address %>
+        </p>
+        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="pk_test_joaFlTzLZCRVUbSVCOk4KK3c"
+            data-description="Complete Your Order"
+            data-amount=<%= @order.order_total*100 %>
+            data-locale="auto">
+        </script>
+      </div>
+    </div>
+  </div>
 <% end %>
