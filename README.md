@@ -31,14 +31,14 @@
 ## Wireframes:
 
 ![](https://dl.dropboxusercontent.com/s/rg29eh3d8k0b7qz/wire1.jpg?dl=100x20)
-![](https://dl.dropboxusercontent.com/s/zhdyljbetf1s4ub/landing.jpg?dl=0)
-![](https://dl.dropboxusercontent.com/s/tfjjtnce48wrq55/item.jpg?dl=0)
-![](https://dl.dropboxusercontent.com/s/r6fu7zsuebs4ev0/cart.jpg?dl=0)
-![](https://dl.dropboxusercontent.com/s/csavv4zetnle1l3/signup.jpg?dl=0)
-![](https://dl.dropboxusercontent.com/s/v67nsze6qoju44m/user.jpg?dl=0)
-![](https://dl.dropboxusercontent.com/s/nlqlzed32lq0k1r/checkout1.jpg?dl=0)
-![](https://dl.dropboxusercontent.com/s/nur3mwjau9bx0bc/checkout2.jpg?dl=0)
-![](https://dl.dropboxusercontent.com/s/ijugblorecnrtbi/checkout3.jpg?dl=0)
+![](https://dl.dropboxusercontent.com/s/zhdyljbetf1s4ub/landing.jpg?dl=100x20)
+![](https://dl.dropboxusercontent.com/s/tfjjtnce48wrq55/item.jpg?dl=100x20)
+![](https://dl.dropboxusercontent.com/s/r6fu7zsuebs4ev0/cart.jpg?dl=100x20)
+![](https://dl.dropboxusercontent.com/s/csavv4zetnle1l3/signup.jpg?dl=100x20)
+![](https://dl.dropboxusercontent.com/s/v67nsze6qoju44m/user.jpg?dl=100x20)
+![](https://dl.dropboxusercontent.com/s/nlqlzed32lq0k1r/checkout1.jpg?dl=100x20)
+![](https://dl.dropboxusercontent.com/s/nur3mwjau9bx0bc/checkout2.jpg?dl=100x20)
+![](https://dl.dropboxusercontent.com/s/ijugblorecnrtbi/checkout3.jpg?dl=100x20)
 
 
 
