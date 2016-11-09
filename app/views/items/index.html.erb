@@ -5,7 +5,7 @@
 <% if item.stock %>
     <div class="card col s12 m5" id=<%= "item#{item.id}" %>>
         <div class="card-image waves-effect waves-block waves-light">
-          <%= image_tag item.image.url(:medium), class: "responsive-img activator" %>
+          <%= image_tag item.image.url(:medium), class: "responsive-img activator card-img" %>
         </div>
         <div class="card-content">
             <span class=" activator grey-text text-darken-4"><h5><%= item.name %></h5></span>
@@ -25,8 +25,7 @@
             <p><%= item.description %></p>
         </div>
     </div>
-      <%= content_tag :div, " ", class: 'col m2' if counter.even? %>
-      <% counter+=1%>
+      
   <% end %>
   <% end %>
 </div>
