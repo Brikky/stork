@@ -11,6 +11,7 @@ class Users::SessionsController < Devise::SessionsController
     super
     if current_user && session[:order_id]
         current_user.current_order.merge_order(Order.find(session[:order_id]))
+        flash[:notice] = "You had items in your cart, your order has been updated. Click #{ view_context.link_to 'here', order_items_path } to revise your order."
       else
       session[:order_id] = current_user.current_order
     end

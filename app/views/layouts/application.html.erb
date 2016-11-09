@@ -11,8 +11,8 @@
     <body>
         <%= render 'partials/nav' %>
         <div class="container main-container">
-            <p class="notice"><%= notice %></p>
-            <p class="alert"><%= alert %></p>
+            <p class="notice"><%= notice.html_safe unless notice.blank? %></p>
+            <p class="alert"><%= alert.html_safe unless alert.blank? %></p>
             <%= link_to order_items_path do %>
             <i class="material-icons medium shopping-cart cart-icon light-blue-text text-darken-2">shopping_cart</i>
             <% end  %>
