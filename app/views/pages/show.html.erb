@@ -1,35 +1,35 @@
 <script src="https://use.fontawesome.com/7b050a501f.js"></script>
 <style>
-body{
-  background: url("large.jpg");
-}
-.fa-github {
-  font-size: 35px;
-  color :#52527a;
-  text-align: center;
-}
+  body{
+    background: url("large.jpg");
+  }
+  .fa-github {
+    font-size: 35px;
+    color :#52527a;
+    text-align: center;
+  }
 
-.banner {
-  text-align: center;
-  color:#3333cc;
-  padding:60px;
-}
+  .banner {
+    text-align: center;
+    color:#3333cc;
+    padding:60px;
+  }
 
-.links {
-   margin: 0 auto;
-}
+  .links {
+     margin: 0 auto;
+  }
 
-.goup-shot{
-  width:100%;
-  display: block;
-  margin: 0 auto;
-}
+  .goup-shot{
+    width:100%;
+    display: block;
+    margin: 0 auto;
+  }
 
-.wrapper{
-  background: beige;
-  padding:60px;
-  width:120%;
-}
+  .wrapper{
+    background: beige;
+    padding:60px;
+    width:120%;
+  }
 </style>
 
 <div class="container wrapper">
@@ -37,9 +37,106 @@ body{
     <h2> Welcome to Stork </h2>
     <img class="goup-shot" src="group.JPG">
   </div>
-  <a  class="fa fa-github" href="https://github.com/Brikky/shop-app" target="_blanck">
+  <a class="fa fa-github" href="https://github.com/Brikky/shop-app" target="_blanck">
   </a>
-  <div> team members </div>
-  <div> challenges </div>
-  <div> </div>
+  <div class="container">
+    <span>What is Stork?</span>
+    <p>Stork is an online candy store. Users can browse our inventory and create an account to purchase items.</p>
+    <p>Why did you choose to build a store?</p>
+    <p> The member of this team decided to build a store to understand which components are needed to build an online shopping experience. It was obvious that users, items and orders were necessary for an online shopping experience, but we went through quite a few iterations to figure out the right combination of these models and how they play together. 
+    </p>
+    <p>Speak a little about the challenges you faced in this project</p>
+    <ol>
+      <li>Whay kind of store are we going to build?</li>
+        <ol>
+          <li>Initially we had the idea of building Amazon, where users can buy and sell items on the platform. We had multiple methods of sorting and grouping items together. After getting feedback about the complexity and challenges that we might face with the initial build we decided to scale back.</li>
+          <li>We had a lot of wireframe iterations and it took time to understand how to sequence out functionality so that we could go from the most basic shopping experience to a more complicated one. From instructor feedback and thorough planning we learned that most basic shopping experience is adding an item to an order. The most complex iteration would include having a user, add an item to an order and allowing that user and all of the users orders to persist allowing for an order history and allowing the user to sell items, which is something like a user ceraing a store. We would then have many stores different kinds of user functionality, (Enum) where the status of the user would alternate, answering the question, is this user acting as a seller or a buyer at the moment?</li>
+        </ol>
+      <li>Models
+        <ol>
+          <li>The biggest question here concerned an Order. What is an order? What information is stored inside of an order obejct and what kind of relationship should the order have with the other models like item or user? If we are thinking about the basic functionality an item is simply a collection of properties describing a physical item in a warehouse. After day two of planning we decided ot include an true backend as in a warehouse, but if this shopping application were to go into production and a seller needed to keep track of shipping this functionality would be necessary. A seller in that case would need to have access to an admin account and when an order is placed as in the order is paid for the item being shipped would need to be tracked from its location in the warehouse to and CUSIP identification number would neeed to be attached to the order to make sure that the item the user paid for is the item the user receives. This brings us around to an order. An order has many items but and item can belong to many orders, so these models need to be separate and we need a join table OrderItem to understand which items belong to which order. When we added the user model an order has a User_id.</li>
+        </ol>
+      </li>
+      <li>
+        <span>Quantity</span>
+        <p>We were warned before we started this project that adding the quantity functionality to an order_item would be challenging. Quantity is full of moving pieces, there is the inventory quanityt that we want to keep track of and the user should understand how many of a certain item are in stock so they can choose accordingly. When a user adds items to an order, and then they decide I want to purchase 3 of this item instead of one how and where do we want the user to be able to update the cart. We ended up adding the an inventory quantity to the item which is displayed along with the item before selection into an order. We decided to add quanitty to an order_item indicating how many instances of an item are in a "cart".</p>
+      </li>
+      <li>
+        <span>Omniauth</span>
+        <p>Omniauth or login with 3rd party sites was a very interesting idea to implement. We setup our login functionality with the devise gem for rails. The devise gem has great documentation and including a walkthourhg for adding omniauth, there is an additional gem for that. We wanted out user to be able to log in via Facebook and that way we could save the users image and location into our database and there was no need for an additional upload. We were able to successfully implement facebook login but we were not able to figure out how to logout once a user is logged in. The session was storing the facebook token and would not delete the token even upon destruction. This is a weird bug we are still looking into.</p>
+      </li>
+      <li>
+        <span>Stripe</span>
+        <p>Strip has great documentation and even has a test mode where you can simulate what a successful pruchase would look like.</p>
+      </li>
+    </ol>
+  </div>
+  <div class="team"> 
+    <div class="container">
+      <img src="">
+      <p>Team Members</p>
+      <ol>
+        <li>
+          <span>Alivia</span>
+          <p>Why this team?</p>
+          <p>I wanted to learn the in's and outs of building a shopping application. Bringing together the payment functionality and</p>
+          <p> Talk about challenges from this project</p>
+          <p></p>
+          <p>Triumphs</p>
+          <p></p>
+          <p>Technical Aha moments</p>
+          <p></p>
+        </li>
+        <li>
+          <span>Chris</span>
+          <p>Why this team?</p>
+          <p>I...</p>
+          <p> Talk about challenges from this project</p>
+          <p></p>
+          <p>Triumphs</p>
+          <p></p>
+          <p>Technical Aha moments</p>
+          <p></p>
+        </li>
+        <li>
+          <span>Sherri</span>
+          <p>Why this team?</p>
+          <p>I... </p>
+          <p> Talk about challenges from this project</p>
+          <p></p>
+          <p>Triumphs</p>
+          <p></p>
+          <p>Technical Aha moments</p>
+          <p></p>
+        </li>
+        <li>
+          <span>Brenden</span>
+          <p>Why this team?</p>
+          <p>I...</p>
+          <p> Talk about challenges from this project</p>
+          <p></p>
+          <p>Triumphs</p>
+          <p></p>
+          <p>Technical Aha moments</p>
+          <p></p>
+        </li>
+      </ol>
+    </div>
+  </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
