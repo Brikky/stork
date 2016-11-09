@@ -142,7 +142,7 @@ items = [
     description: 'grape fruit chew',
     price: 1.29,
     stock: 20,
-    image: File.new(Rails.root.to_s + '/app/assets/images/hi-chew-grape.png')
+    image: File.new(Rails.root.to_s + '/app/assets/images/Hi-Chew-Grape.png')
   },
   {
     name: 'Jelly Belly Jelly Beans',
