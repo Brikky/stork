@@ -13,6 +13,7 @@ class Order < ApplicationRecord
   end
 
   def handle_payment
+    self.status = 'paid'
     order_items.each do |oi|
       oi.purchase_price = oi.item.price
       oi.item.stock -= oi.quantity
@@ -21,35 +22,29 @@ class Order < ApplicationRecord
   end
 
   def merge_order(order)
-    return if self.id == order.id
+    return if id == order.id
     order.order_items.each do |oi|
-      oi.order_id = self.id
-      self.order_items.push(oi)
+      oi.order_id = id
+      order_items.push(oi)
     end
-    self.save
+    save
     order.delete
   end
 
   def items_unavailable
     check_stock = []
-    self.order_items.each do |oi|
-      if oi.quantity > oi.item.stock
-        check_stock << oi.item.name
-      end
+    order_items.each do |oi|
+      check_stock << oi.item.name if oi.quantity > oi.item.stock
     end
 
-    return check_stock
+    check_stock
   end
 
   def amount_available
-     stock_amount = []
-    self.order_items.each do |oi|
-    if oi.quantity > oi.item.stock
-      stock_amount << oi.item.stock
+    stock_amount = []
+    order_items.each do |oi|
+      stock_amount << oi.item.stock if oi.quantity > oi.item.stock
     end
-    end
-
-    return stock_amount
+    stock_amount
   end
-
 end
