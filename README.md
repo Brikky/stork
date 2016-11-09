@@ -29,10 +29,20 @@
 
 
 
-## Wireframes:
+## Wireframes and User Stories:
 
 ![](https://dl.dropboxusercontent.com/s/rg29eh3d8k0b7qz/wire1.jpg?dl=0)
+
+### Home Page:
+- User can browse for candy on the home page
+- User can add a specific candy to the cart by adding the 'Add to Cart' button
+- User can specify the quantity of that candy to be added
+- User can sign up for a store account via the 'Sign Up' button
+- User can log in to their store account in the Nav Bar
+- User can store their address (to be accessed when shipping is implemented)
+- User can see how much stock remains for a certain item
 ![](https://dl.dropboxusercontent.com/s/zhdyljbetf1s4ub/landing.jpg?dl=0)
+
 ![](https://dl.dropboxusercontent.com/s/tfjjtnce48wrq55/item.jpg?dl=0)
 ![](https://dl.dropboxusercontent.com/s/r6fu7zsuebs4ev0/cart.jpg?dl=0)
 ![](https://dl.dropboxusercontent.com/s/csavv4zetnle1l3/signup.jpg?dl=0)
@@ -41,15 +51,7 @@
 ![](https://dl.dropboxusercontent.com/s/nur3mwjau9bx0bc/checkout2.jpg?dl=0)
 ![](https://dl.dropboxusercontent.com/s/ijugblorecnrtbi/checkout3.jpg?dl=0)
 
-## User Stories:
-### Home Page:
-User can browse for candy on the home page
-User can add a specific candy to the cart by adding the 'Add to Cart' button
-User can specify the quantity of that candy to be added
-User can sign up for a store account via the 'Sign Up' button
-User can log in to their store account in the Nav Bar
-User can store their address (to be accessed when shipping is implemented)
-User can see how much stock remains for a certain item
+
 
 ### Item Page:
 
