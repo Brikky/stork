@@ -2,7 +2,7 @@
 
 ## Description
 * Description: Short paragraph (2-3 sentences) "elevator pitch" describing what your project does
-
+ [Link to Heroku](https://stork-store.herokuapp.com/)
 ## Technologies:
 
 - HTML / CSS/ SASS
@@ -43,8 +43,4 @@
 
 
 
-
-* Link to Heroku hosted project
-* Technologies (languages, external libraries, APIs)
-* Wish List / Future Development
 [Project Requirements and Description](https://github.com/sf-wdi-gaia/project-03#project-planning-deliverables)
