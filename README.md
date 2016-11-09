@@ -34,9 +34,9 @@
 ### User Flow:
 - User can add items to a cart without being logged in
 - When logged in, 
-* User can view their profile page, past orders
-* User must be logged-in in order to checkout
-* User can enter credit card information to finalize purchase and view receipt upon completion of payment
+	* User can view their profile page, past orders
+	* User must be logged-in in order to checkout
+	* User can enter credit card information to finalize purchase and view receipt upon completion of payment
 	
 ![](https://dl.dropboxusercontent.com/s/rg29eh3d8k0b7qz/wire1.jpg?dl=0)
 
