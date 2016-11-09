@@ -25,6 +25,10 @@ body {
     flex-wrap: wrap;
     justify-content: space-between;
 }
+.align-bottom{
+  display:flex;
+  align-items: baseline;
+}
 
 .nav-wrapper {
     width: 100%;
@@ -201,5 +205,5 @@ html {
 }
 
 .bumper {
-    height: 5vw;
+    height: 2vh;
 }
