@@ -1,4 +1,5 @@
 # shop-app
+![](https://github.com/Brikky/shop-app/blob/master/public/ShopApp2.gif)
 
 ## Description
 * Please refere to about page:
@@ -16,7 +17,7 @@
 - Paperclip
 - Rspec ( for testing )
 
-## Milestone
+## Milestones
  1. Items/ Orders
  2. Items/ Orders/ Payments
  3. Items/ Orders/ Payments/ Quantity
