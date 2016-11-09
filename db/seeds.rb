@@ -4,30 +4,174 @@ User.destroy_all
 Item.destroy_all
 
 items = [
-  { name: "hershey's chocolate bar", description: 'milk chocolate bar, 1.55 ounces', price: 1.99, stock: 20, image: File.new(Rails.root.to_s + '/app/assets/images/hershey.png') },
-  { name: 'Nerds', description: 'Bite size colorful flavorful sour snaps, 1.55 ounces', price: 1.99, stock: 20, image: File.new(Rails.root.to_s + '/app/assets/images/nerds.jpg') },
-  { name: 'Green Apple Licorice', description: '15 pieces tastes like a real apple', price: 2.50, stock: 20, image: File.new(Rails.root.to_s + '/app/assets/images/green_licorice.png') },
-  { name: 'Watermelon Licorice', description: '15 pieces tastes like a real watermelon', price: 2.50, stock: 20, image: File.new(Rails.root.to_s + '/app/assets/images/hersheys_twizzlers_watermelon.png') },
-  { name: 'Cherry Licorice', description: '15 pieces tastes like a real cherry', price: 2.50, stock: 20, image: File.new(Rails.root.to_s + '/app/assets/images/cherry_licorice.png') },
-  { name: 'Blue Rasberry Licorice', description: '15 pieces tastes like a real reasberry', price: 2.50, stock: 20, image: File.new(Rails.root.to_s + '/app/assets/images/blue-licorice.png') },
-  { name: 'nerds rope', description: 'direct from the wonka factory, made of nerds and joy, 1.55 ounces', price: 1.99, stock: 20, image: File.new(Rails.root.to_s + '/app/assets/images/nerds-rope.jpg') },
-  { name: 'apple heads', description: 'apple crunch drops', price: 1.99, stock: 20, image: File.new(Rails.root.to_s + '/app/assets/images/apple_heads.png') },
-  { name: 'haribo gumy bears', description: 'the original gummy bear, THE ORIGINAL', price: 2.99, stock: 20, image: File.new(Rails.root.to_s + '/app/assets/images/haribo.png') },
-  { name: 'sour gummy worms', description: 'stringy sour and sweet strands of goodness', price: 2.99, stock: 20, image: File.new(Rails.root.to_s + '/app/assets/images/sour-gummy-worms.jpg') },
-  { name: 'sour watemelon slices', description: 'sour patch kids sour melon slices', price: 2.99, stock: 20, image: File.new(Rails.root.to_s + '/app/assets/images/Sour_Patch_Watermelon_Slices.jpg') },
-  { name: 'warheads', description: '20 pieces an assortment of flavors, guaranteed to make you cry', price: 2.99, stock: 20, image: File.new(Rails.root.to_s + '/app/assets/images/warheads.jpg') },
-  { name: 'sour strips', description: '10 strips per package, intense sour flavor', price: 3.99, stock: 20, image: File.new(Rails.root.to_s + '/app/assets/images/sour_strips.jpg') },
-  { name: 'butterfinger', description: 'milk chocolate bar w/ peanut butter crunch', price: 0.99, stock: 20, image: File.new(Rails.root.to_s + '/app/assets/images/butterfinger.png') },
-  { name: 'm&ms', description: 'milk chocolate pices w/ peanut center', price: 0.99, stock: 20, image: File.new(Rails.root.to_s + '/app/assets/images/mms.png') },
-  { name: 'twix', description: 'milk chocolate bar, 1.55 ounces', price: 0.99, stock: 20, image: File.new(Rails.root.to_s + '/app/assets/images/twix.png') },
-  { name: 'mango hi-chew', description: 'fruit chew', price: 1.29, stock: 20, image: File.new(Rails.root.to_s + '/app/assets/images/mango-hi-chew.png') },
-  { name: 'green apple hi-chew', description: 'fruit chew', price: 1.29, stock: 20, image: File.new(Rails.root.to_s + '/app/assets/images/apple-hi-chew.png') },
-  { name: 'cherry hi-chew', description: 'fruit chew', price: 1.29, stock: 20, image: File.new(Rails.root.to_s + '/app/assets/images/cherry-hi-chew.png') },
-  { name: 'grape hi-chew', description: 'fruit chew', price: 1.29, stock: 20, image: File.new(Rails.root.to_s + '/app/assets/images/Hi-Chew-Grape.png') },
-  { name: 'jelly belly jelly beans', description: 'assorted all 49 flavors', price: 1.99, stock: 20, image: File.new(Rails.root.to_s + '/app/assets/images/jellybelly.jpg') },
-  { name: 'starburst', description: '5 flavor soft chews', price: 1.29, stock: 20, image: File.new(Rails.root.to_s + '/app/assets/images/starburst.jpeg') },
-  { name: 'skittles', description: 'bite size fruit crunchies witha  soft center', price: 1.29, stock: 20, image: File.new(Rails.root.to_s + '/app/assets/images/skittles.jpg') },
-  { name: 'ghirardelli milk chocolate with caramel filling squares', description: 'milk chocolate bar, 1.55 ounces', price: 9.99, stock: 20, image: File.new(Rails.root.to_s + '/app/assets/images/ghirardelli.png') }
+  {
+    name: "Hershey's Chocolate Bar",
+    description: 'milk chocolate bar, 1.55 ounces',
+    price: 1.99,
+    stock: 20,
+    image: File.new(Rails.root.to_s + '/app/assets/images/hershey.png')
+  },
+  {
+    name: 'Nerds',
+    description: 'Bite size colorful flavorful sour snaps, 1.55 ounces',
+    price: 1.99,
+    stock: 20,
+    image: File.new(Rails.root.to_s + '/app/assets/images/nerds.jpg')
+  },
+  {
+    name: 'Green Apple Licorice',
+    description: '15 pieces, real apple taste!',
+    price: 2.50,
+    stock: 20,
+    image: File.new(Rails.root.to_s + '/app/assets/images/green_licorice.png')
+  },
+  {
+    name: 'Watermelon Licorice',
+    description: '15 pieces, real watermelon taste!',
+    price: 2.50,
+    stock: 20,
+    image: File.new(Rails.root.to_s + '/app/assets/images/hersheys_twizzlers_watermelon.png')
+  },
+  {
+    name: 'Cherry Licorice',
+    description: '15 pieces, real cherry taste!',
+    price: 2.50,
+    stock: 20,
+    image: File.new(Rails.root.to_s + '/app/assets/images/cherry_licorice.png')
+  },
+  {
+    name: 'Blue Rasberry Licorice',
+    description: '15 pieces, real raspberry taste!',
+    price: 2.50,
+    stock: 20,
+    image: File.new(Rails.root.to_s + '/app/assets/images/blue-licorice.png')
+  },
+  {
+    name: 'Nerds Rope',
+    description: 'direct from the Wonka Factory, made of nerds and joy, 1.55 ounces',
+    price: 1.99,
+    stock: 20,
+    image: File.new(Rails.root.to_s + '/app/assets/images/nerds-rope.jpg')
+  },
+  {
+    name: 'Apple Heads',
+    description: 'apple crunch drops',
+    price: 1.99,
+    stock: 20,
+    image: File.new(Rails.root.to_s + '/app/assets/images/apple_heads.png')
+  },
+  {
+    name: 'Haribo Gummy Bears',
+    description: 'the original gummy bear',
+    price: 2.99,
+    stock: 20,
+    image: File.new(Rails.root.to_s + '/app/assets/images/haribo.png')
+  },
+  {
+    name: 'Sour Gummy Worms',
+    description: 'stringy sour and sweet strands of goodness',
+    price: 2.99,
+    stock: 20,
+    image: File.new(Rails.root.to_s + '/app/assets/images/sour-gummy-worms.jpg')
+  },
+  {
+    name: 'Sour Watemelon Slices',
+    description: 'sour patch kids sour melon slices',
+    price: 2.99,
+    stock: 20,
+    image: File.new(Rails.root.to_s + '/app/assets/images/Sour_Patch_Watermelon_Slices.jpg')
+  },
+  {
+    name: 'Warheads',
+    description: '20 pieces, an assortment of flavors guaranteed to make you cry',
+    price: 2.99,
+    stock: 20,
+    image: File.new(Rails.root.to_s + '/app/assets/images/warheads.jpg')
+  },
+  {
+    name: 'Sour Strips',
+    description: '10 strips per package, intense sour flavor',
+    price: 3.99,
+    stock: 20,
+    image: File.new(Rails.root.to_s + '/app/assets/images/sour_strips.jpg')
+  },
+  {
+    name: 'Butterfinger',
+    description: 'milk chocolate bar with peanut butter crunch',
+    price: 0.99,
+    stock: 20,
+    image: File.new(Rails.root.to_s + '/app/assets/images/butterfinger.png')
+  },
+  {
+    name: "M&M'S",
+    description: 'milk chocolate pices with peanut center',
+    price: 0.99,
+    stock: 20,
+    image: File.new(Rails.root.to_s + '/app/assets/images/mms.png')
+  },
+  {
+    name: 'Twix',
+    description: 'milk chocolate bar, 1.55 ounces',
+    price: 0.99,
+    stock: 20,
+    image: File.new(Rails.root.to_s + '/app/assets/images/twix.png')
+  },
+  {
+    name: 'Mango Hi-Chew',
+    description: 'mango fruit chew',
+    price: 1.29,
+    stock: 20,
+    image: File.new(Rails.root.to_s + '/app/assets/images/mango-Hi-Chew.png')
+  },
+  {
+    name: 'Green Apple Hi-Chew',
+    description: 'green apple fruit chew',
+    price: 1.29,
+    stock: 20,
+    image: File.new(Rails.root.to_s + '/app/assets/images/apple-Hi-Chew.png')
+  },
+  {
+    name: 'Cherry Hi-Chew',
+    description: 'cherry fruit chew',
+    price: 1.29,
+    stock: 20,
+    image: File.new(Rails.root.to_s + '/app/assets/images/cherry-Hi-Chew.png')
+  },
+  {
+    name: 'Grape Hi-Chew',
+    description: 'grape fruit chew',
+    price: 1.29,
+    stock: 20,
+    image: File.new(Rails.root.to_s + '/app/assets/images/Hi-Chew-Grape.png')
+  },
+  {
+    name: 'Jelly Belly Jelly Beans',
+    description: 'assortment of all 49 flavors',
+    price: 1.99,
+    stock: 20,
+    image: File.new(Rails.root.to_s + '/app/assets/images/jellybelly.jpg')
+  },
+  {
+    name: 'Starburst',
+    description: 'unbelievably juicy candy chews',
+    price: 1.29,
+    stock: 20,
+    image: File.new(Rails.root.to_s + '/app/assets/images/starburst.jpeg')
+  },
+  {
+    name: 'Skittles',
+    description: 'bite size fruit crunchies with a  soft center, taste the rainbow',
+    price: 1.29,
+    stock: 20,
+    image: File.new(Rails.root.to_s + '/app/assets/images/skittles.jpg')
+  },
+  {
+    name: 'Ghirardelli Milk Chocolate Squares with Caramel Filling',
+    description: 'milk chocolate bar with sweet caramel filling, 1.55 ounces',
+    price: 9.99,
+    stock: 20,
+    image: File.new(Rails.root.to_s + '/app/assets/images/ghirardelli.png')
+  }
 ]
 
 Item.create(items)
