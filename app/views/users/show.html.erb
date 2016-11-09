@@ -1,32 +1,38 @@
 <p id="notice"><%= notice %></p>
 <div class="container">
 	<h5>User Information</h5>
-	<div>First Name: <%= current_user.first_name %></div>
-	<div>Last Name: <%= current_user.last_name %></div>
-	<div>Address: <%= current_user.full_address %></div>
-	<div>Email: <%= current_user.email %></div>
+	<div><strong>First Name: </strong> <%= current_user.first_name %></div>
+	<div><strong>Last Name: </strong> <%= current_user.last_name %></div>
+	<div><strong>Address: </strong> <%= current_user.full_address %></div>
+	<div><strong>Email: </strong> <%= current_user.email %></div>
 </div>
 
+
 <div class="container">
-	<h5>Order History</h5>
-	<% @processed_orders.each do |order|%>
-		<div class="container">
-			<table>
-				<tr>
-					<th>Item</th>
-					<th>Quantity</th>
-					<th>Price</th>
-				</tr>
-				<% order.order_items.each do |oi|%>
-				<tr>
-					<td><%= oi.item.name %></td>
-					<td><%= oi.quantity %></td>
-					<td><%= oi.purchase_price %></td>
-				</tr>
-				<% end %>
-			</table>
-		</div>
-	<% end%>
+  <h3>Orders</h3>
+
+  <table>
+    <tbody>
+      <thead>
+        <th>
+      <th class = "center-align">Items</th>
+      <th class = "center-align">Total Amount</th>
+      <th class = "center-align">Date</th>
+      </th>
+    </thead>
+      <% current_user.orders.each do |order| %>
+      <% if order.status = "paid"%>
+        <tr>
+          <td></td>
+          <td class = "center-align"><%= order.items.count %></td>
+          <td class = "center-align"><%= number_to_currency order.order_total %></td>
+          <td class = "center-align"><%= order.updated_at.strftime("%d %b. %Y") %></td>
+          <td class = "right-align"><%= link_to 'More Details', order %></td>
+        </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
 </div>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |

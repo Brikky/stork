@@ -26,12 +26,13 @@
 </div>
 <div class='bumper'> </div>
 
-<div class="row">
-<h5>Other Selections: </h5>
+<h5>Other Selections: </h5><br>
+<hr>
+<div class="row align-bottom">
 	<% @suggestions.each do |suggestion| %>
 		<div class="col m2">
 			<%= link_to item_path(suggestion) do %>
-			  <%= image_tag suggestion.image.url(:medium), class: 'responsive-img' %>	  
+			  <%= image_tag suggestion.image.url(:medium), class: 'responsive-img' %>
 			<% end %>
 			<p><%= link_to suggestion.name, item_path(suggestion) %></p>
 		</div>

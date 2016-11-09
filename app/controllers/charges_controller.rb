@@ -3,8 +3,6 @@ class ChargesController < ApplicationController
 
   def new
     @order = current_order
-    # Amount in cents
-
     unavailable_items = @order.items_unavailable
     unless unavailable_items.length.zero?
       flash[:error] = "items #{unavailable_items.to_sentence} have a limited stock.Amounts available are #{@order.amount_available.to_sentence}. Please update your order before checkout."
@@ -14,7 +12,6 @@ class ChargesController < ApplicationController
   def create
     begin
       @order = current_order
-      # Amount in cents
       customer = Stripe::Customer.create(
         email: params[:stripeEmail],
         source: params[:stripeToken]
@@ -22,7 +19,7 @@ class ChargesController < ApplicationController
 
       charge = Stripe::Charge.create(
         customer: customer.id,
-        amount: @order.order_total,
+        amount: (@order.order_total*100).to_i,
         description: 'Rails Stripe customer',
         currency: 'usd'
       )
