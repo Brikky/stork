@@ -42,7 +42,15 @@
 ![](https://dl.dropboxusercontent.com/s/nur3mwjau9bx0bc/checkout2.jpg?dl=0)
 ![](https://dl.dropboxusercontent.com/s/ijugblorecnrtbi/checkout3.jpg?dl=0)
 
+## Future Work:
 
+adding features:
+- Mail confirmation
+- PDF for receipe 
+- Finishing the OmniAuth
+- Add edit profile feature for users
+- Adding categories and brands
+- Adding order by price feature
 
 
 [Project Requirements and Description](https://github.com/sf-wdi-gaia/project-03#project-planning-deliverables)
