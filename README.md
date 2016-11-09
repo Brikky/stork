@@ -3,6 +3,8 @@
 ## Description
 * Please refere to about page:
  - [Link to Heroku](https://stork-store.herokuapp.com/)
+ 
+ ---------------------------------------------------------------------------------------------------
 ## Technologies:
 
 - HTML / CSS/ SASS
