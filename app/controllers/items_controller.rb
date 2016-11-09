@@ -10,6 +10,7 @@ class ItemsController < ApplicationController
   # GET /items/1
   # GET /items/1.json
   def show
+    @suggestions = Item.where.not(id:params[:id]).order("RANDOM()").limit(6)
   end
 
   # GET /items/new
