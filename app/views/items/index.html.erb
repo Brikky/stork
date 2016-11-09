@@ -3,12 +3,13 @@
   <% counter = 0 %>
     <% @items.each do |item| %>
 <% if item.stock %>
-    <div class="card col s12 m5">
+    <div class="card col s12 m5" id=<%= "item#{item.id}" %>>
         <div class="card-image waves-effect waves-block waves-light">
           <%= image_tag item.image.url(:medium), class: "responsive-img activator" %>
         </div>
         <div class="card-content">
             <span class=" activator grey-text text-darken-4"><h5><%= item.name %></h5></span>
+            <span class = "grey-text"><h6><%=item.stock %> available</h6></span>
             <div>
                 <%= form_for OrderItem.new, url: order_items_path do |f| %>
                 <%= f.hidden_field :item, :value => item.id %>
