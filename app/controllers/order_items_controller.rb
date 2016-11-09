@@ -26,7 +26,7 @@ class OrderItemsController < ApplicationController
   def create
     if current_order.order_items.exists?(item_id: order_item_params[:item_id])
       @order_item = current_order.order_items.find_by(item_id: order_item_params[:item_id])
-      @order_item.update_attribute(:quantity, @order_item.quantity + 1)
+      @order_item.update_attribute(:quantity, @order_item.quantity + order_item_params[:quantity].to_i)
     else
       @order_item = OrderItem.create(order_item_params)
 

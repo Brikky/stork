@@ -1,4 +1,33 @@
 <p id="notice"><%= notice %></p>
+<div class="container">
+	<h5>User Information</h5>
+	<div>First Name: <%= current_user.first_name %></div>
+	<div>Last Name: <%= current_user.last_name %></div>
+	<div>Address: <%= current_user.full_address %></div>
+	<div>Email: <%= current_user.email %></div>
+</div>
+
+<div class="container">
+	<h5>Order History</h5>
+	<% @processed_orders.each do |order|%>
+		<div class="container">
+			<table>
+				<tr>
+					<th>Item</th>
+					<th>Quantity</th>
+					<th>Price</th>
+				</tr>
+				<% order.order_items.each do |oi|%>
+				<tr>
+					<td><%= oi.item.name %></td>
+					<td><%= oi.quantity %></td>
+					<td><%= oi.purchase_price %></td>
+				</tr>
+				<% end %>
+			</table>
+		</div>
+	<% end%>
+</div>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
