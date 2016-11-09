@@ -1,8 +1,8 @@
 # shop-app
 
 ## Description
-* Description: Short paragraph (2-3 sentences) "elevator pitch" describing what your project does
- [Link to Heroku](https://stork-store.herokuapp.com/)
+* Please refere to about page:
+ - [Link to Heroku](https://stork-store.herokuapp.com/)
 ## Technologies:
 
 - HTML / CSS/ SASS
