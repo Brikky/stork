@@ -201,8 +201,3 @@ end
   OrderItem.create(order_id: rand(1..20), item_id: rand(1..23), quantity: rand(5..20))
 end
 Order.all.each(&:handle_payment)
-
-Order.create(user_id: sherri.id, status: 'open')
-Order.create(user_id: brandon.id, status: 'open')
-Order.create(user_id: chris.id, status: 'open')
-Order.create(user_id: alivia.id, status: 'open')
