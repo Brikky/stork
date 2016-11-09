@@ -14,7 +14,7 @@ class ChargesController < ApplicationController
       @order = current_order
       customer = Stripe::Customer.create(
         email: params[:stripeEmail],
-        source: params[:stripeToken]
+        source: ENV["STRIPE_SECRET_KEY"]
       )
 
       charge = Stripe::Charge.create(
