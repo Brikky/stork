@@ -40,7 +40,7 @@ class OrderItemsController < ApplicationController
   def update
     respond_to do |format|
       if @order_item.update(order_item_params)
-        format.html { redirect_to @order_item, notice: 'Order item was successfully updated.' }
+        format.html { redirect_to order_items_path, notice: 'Order item was successfully updated.' }
         format.json { render :show, status: :ok, location: @order_item }
       else
         format.html { render :edit }

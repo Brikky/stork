@@ -6,7 +6,7 @@
 			<%= image_tag @item.image.url(:medium), class: 'responsive-img' %>
 		</div>
 		<div class="item-price">
-			<p><strong>Price: </strong> <%= number_to_currency(@item.price) %></p> 
+			<p><strong>Price: </strong> <%= number_to_currency(@item.price) %></p>
 		</div>
 		<span><%= form_for OrderItem.new, url: order_items_path do |f| %>
 		<span><%= link_to 'Back', root_path, class: 'btn' %></span>
@@ -19,7 +19,7 @@
 		<h5 class="item-name">
 			<%= @item.name %>
 		</h5>
-		<p class="stock-remaining <%= @item.stock >= 5 ? 'green-text' : 'red-text' %>"><%= @item.stock %> remaining</p>
+		<h6 class="stock-remaining <%= @item.stock >= 5 ? 'grey-text' : 'red-text' %>"><%= @item.stock %> remaining</h6>
 		<p><%= @item.description %></p>
 
 	</div>
