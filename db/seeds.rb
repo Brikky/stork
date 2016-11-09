@@ -5,10 +5,10 @@ Item.destroy_all
 
 items = [
   {name: "hershey's chocolate bar" , description: "milk chocolate bar, 1.55 ounces" , price: 1.99 , stock: 20, image: File.new(Rails.root.to_s + "/app/assets/images/hershey.png")},
-  {name: "Nerds" , description: "Bite size colorful flavorful sour snaps, 1.55 ounces" , price: 1.99 , stock: 20, image: File.new(Rails.root.to_s + "/app/assets/images/green_licorice.jpg")},
-  {name: "Green Apple Licorice" , description: "15 pieces tastes like a real apple" , price: 6.99 , stock: 20, image: File.new(Rails.root.to_s + "/app/assets/images/hersheys_twizzlers_watermelon.png")},
-  {name: "Watermelon Licorice" , description: "15 pieces tastes like a real watermelon" , price: 6.99 , stock: 20, image: File.new(Rails.root.to_s + "/app/assets/images/cherry_licorice.png")},
-  {name: "Cherry Licorice" , description: "15 pieces tastes like a real cherry" , price: 6.99 , stock: 20, image: File.new(Rails.root.to_s + "/app/assets/images/hershey.png")},
+  {name: "Nerds" , description: "Bite size colorful flavorful sour snaps, 1.55 ounces" , price: 1.99 , stock: 20, image: File.new(Rails.root.to_s + "/app/assets/images/nerds.jpg")},
+  {name: "Green Apple Licorice" , description: "15 pieces tastes like a real apple" , price: 6.99 , stock: 20, image: File.new(Rails.root.to_s + "/app/assets/images/green_licorice.jpg")},
+  {name: "Watermelon Licorice" , description: "15 pieces tastes like a real watermelon" , price: 6.99 , stock: 20, image: File.new(Rails.root.to_s + "/app/assets/images/hersheys_twizzlers_watermelon.png")},
+  {name: "Cherry Licorice" , description: "15 pieces tastes like a real cherry" , price: 6.99 , stock: 20, image: File.new(Rails.root.to_s + "/app/assets/images/cherry_licorice.png")},
   {name: "Blue Rasberry Licorice" , description: "15 pieces tastes like a real reasberry" , price: 6.99 , stock: 20, image: File.new(Rails.root.to_s + "/app/assets/images/blue-licorice.jpg")},
   {name: "nerds rope" , description: "direct from the wonka factory, made of nerds and joy, 1.55 ounces" , price: 1.99 , stock: 20, image: File.new(Rails.root.to_s + "/app/assets/images/nerds.jpg")},
   {name: "apple heads" , description: "apple crunch drops" , price: 1.99 , stock: 20, image: File.new(Rails.root.to_s + "/app/assets/images/apple_heads.jpg")},
@@ -19,7 +19,7 @@ items = [
   {name: "sour strips" , description: "10 strips per package, intense sour flavor" , price: 3.99 , stock: 20, image: File.new(Rails.root.to_s + "/app/assets/images/sour_strips.jpg")},
   {name: "butterfinger" , description: "milk chocolate bar w/ peanut butter crunch" , price: 0.99 , stock: 20, image: File.new(Rails.root.to_s + "/app/assets/images/butterfinger.jpg")},
   {name: "m&ms" , description: "milk chocolate pices w/ peanut center" , price: 0.99 , stock: 20, image: File.new(Rails.root.to_s + "/app/assets/images/mms.jpg")},
-  {name: "snickers" , description: "milk chocolate bar, 1.55 ounces" , price: 0.99 , stock: 20, image: File.new(Rails.root.to_s + "/app/assets/images/snickers.png-large")},
+  {name: "snickers" , description: "milk chocolate bar, 1.55 ounces" , price: 0.99 , stock: 20, image: File.new(Rails.root.to_s + "/app/assets/images/snickers.png")},
   {name: "twix" , description: "milk chocolate bar, 1.55 ounces" , price: 0.99 , stock: 20, image: File.new(Rails.root.to_s + "/app/assets/images/twix.png")},
   {name: "mango hi-chew" , description: "fruit chew" , price: 1.29 , stock: 20, image: File.new(Rails.root.to_s + "/app/assets/images/mango-hi-chew.png")},
   {name: "green apple hi-chew" , description: "fruit chew" , price: 1.29 , stock: 20, image: File.new(Rails.root.to_s + "/app/assets/images/apple-hi-chew.png")},
