@@ -2,7 +2,7 @@
 <nav>
     <div class="nav-wrapper light-blue">
       <div id="header" class="offset-s6 ">
-        <span><a href="/" class="brand-logo left"><img class = "logo" src="/stork-small.png" alt=""></a></span>
+        <span><a href="/" class="brand-logo left"><img class = "logo" src="/stork.png" alt=""></a></span>
 
         <% unless user_signed_in?%>
           <%= form_for(:user, :url => session_path(:user)) do |f| %>
@@ -17,6 +17,7 @@
         <% if user_signed_in? %>
           <span>Hi <%= current_user.first_name %> </span>
           <span><%= link_to "Log Out", destroy_user_session_path, method: :delete %></span>
+          <span><%= link_to "Profile", user_path(current_user) %></span>
         <% end %>
     </div>
   </div>

@@ -13,7 +13,11 @@ class Order < ApplicationRecord
   end
 
   def handle_payment
-    order_items.each { |oi| oi.purchase_price = oi.item.price; oi.save }
+    order_items.each do |oi|
+      oi.purchase_price = oi.item.price
+      oi.item.stock -= oi.quantity
+      oi.save
+    end
   end
 
   def merge_order(order)
@@ -25,4 +29,27 @@ class Order < ApplicationRecord
     self.save
     order.delete
   end
+
+  def items_unavailable
+    check_stock = []
+    self.order_items.each do |oi|
+      if oi.quantity > oi.item.stock
+        check_stock << oi.item.name
+      end
+    end
+
+    return check_stock
+  end
+
+  def amount_available
+     stock_amount = []
+    self.order_items.each do |oi|
+    if oi.quantity > oi.item.stock
+      stock_amount << oi.item.stock
+    end
+    end
+
+    return stock_amount
+  end
+
 end
