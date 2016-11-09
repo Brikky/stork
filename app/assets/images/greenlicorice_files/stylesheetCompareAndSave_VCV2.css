@@ -1,0 +1,26 @@
+﻿
+/* Product List Template0 - Compare And Save */
+.pl0Cas { padding:10px 0 10px 0; }
+.pl0CasMsg { padding:5px 0 0 10px; margin-bottom:14px !important; }
+.pl0CasMsg a { color:#1B82C5; font-weight:bold; letter-spacing:-1px; text-decoration:none; }
+.pl0CasMsg a:hover { text-decoration:underline; }
+.pl0CasIn { margin:0 0 0 10px; }
+.pl0Cas .pl0CasMsg .sepH,
+.pl0Cas .sepH { margin:-8px 0 0 0 !important; }
+
+/* Product Template4 - Compare And Save */
+.pt4 { padding-top:6px; }
+.pt4T { width:72%; font-weight: bold; padding-top: 5px !important; font-family:arial; }
+.pt4B { padding-top:3px; }
+.pt4p,
+.pt4s,
+.pt4rt { float:right;}
+.pt4p { width:22%; float:none; } 
+.pt4s { width:19%; padding-top:4px; float:none;}
+.pt4rt { width:31%; padding-top:6px; float:left; }
+.pt4Btn { float:none; width:8%; position:relative; margin-top:-18px; left:410px; top: -45px;}
+.pt4Lg { float:left; width:12%; }
+.pr4LgR { float:left; width:88%; }
+.pt4p .pRetailPrice {font-family:arial; font-size: 13px; position: relative; left: -5px; top: 8px;}
+.pt4p .pOurPriceM {font-family:arial; font-size: 13px; padding-top: 8px !important; }
+.pt4rt .pRating { font-size: 11px; padding-top: 5px; font-weight: bold; }

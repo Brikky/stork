@@ -1,0 +1,215 @@
+/*resets*/
+body *
+{
+    font-size: 10pt;
+    color: #000!important;
+}
+
+h1
+{
+    font-size: 120%!important;
+font-size: 120%!important;
+width: 100%;
+float: left;
+}
+
+h2
+{
+    font-size: 110%!important;
+}
+
+li
+{
+    list-style: none;
+}
+
+a
+{
+    color: inherit;
+    text-decoration: none;
+}
+/*Hide useless content from printing*/
+.button1, .button2, .button3,
+.scSS img, .l-arrow,
+.FooterUl, .ftrSiteInfo, .sslin, #WelcomeMessage, #mCartItems,
+#NavWrapper, #FooterUlWrap, #SearchWrapper, #freeShippingHdr, #CServiceLinks, #NavWrapperResponsive,#PP-Cart,#headerEmailSignUp,#mlpMyListOperations,#headerAccountCS,[id$=pnlmyListsrch],
+#contactDetails,#footerColumnWrap,#legalLinks,[id$=operations2]
+{
+    display: none!important;
+}
+
+.iCol1of2
+{
+    float: left;
+    width: 49%;
+}
+
+    .iCol1of2 + .iCol1of2
+    {
+        margin-left: 1%;
+    }
+
+.oCol2of3
+{
+    width: 66%;
+    float: left;
+    clear: none;
+}
+
+.oCol1of3
+{
+    width: 33%;
+    float: left;
+    clear: none;
+}
+
+    .oCol2of3 + .oCol1of3,
+    .oCol1of3 + .oCol2of3
+    {
+        margin-left: 1%;
+    }
+
+dl.columns
+{
+    width: 100%;
+    float: left;
+    margin: 10px 0;
+}
+
+    dl.columns dt
+    {
+        float: left;
+        clear: left;
+        padding: 2px 0 4px;
+        width: auto;
+    }
+
+    dl.columns dd
+    {
+        float: left;
+        clear: none;
+        padding: 2px 0 4px 1ex;
+    }
+
+#ContentWrapper
+{
+    width: 100%;
+}
+
+#Logo
+{
+    width: 49%;
+    height: 69px;
+    float: left;
+}
+
+#saleBar
+{
+    width: 50%;
+    float: right;
+    clear: none;
+}
+
+#Footer
+{
+    float: left;
+    clear: left;
+}
+
+#Disclaimer
+{
+    font-size: 8pt!important;
+}
+/*Order Detail page*/
+
+.sflcheck [type=checkbox]
+{
+    width: 20px;
+    height: 20px;
+}
+
+.itemNo
+{
+    font-size: 11px;
+    color: #222;
+    float: left;
+    clear: left;
+}
+
+.skuActions
+{
+    float: left;
+    clear: left;
+}
+
+.tblCart
+{
+    border-bottom: solid 1px #999;
+    border-top: solid 1px #999;
+}
+
+    .tblCart th:first-child
+    {
+        text-align: left;
+    }
+
+    .separator td, .tblCart th
+    {
+        border-bottom: solid 1px #ccc;
+    }
+
+[id$=panelOrder] .columns dt
+{
+    width: 12ex;
+}
+
+[id$=pmtList] .columns dt,
+.columns dd
+{
+    min-width: 19ex;
+}
+
+#page_orderDetails .oCol2of3
+{
+    width: 100%;
+}
+
+#page_orderDetails .oCol1of3
+{
+    float: right;
+    clear: both;
+    margin: 0;
+}
+
+.coHdrMap
+{
+display:none
+
+}
+#orderConfirmationPage tr td {
+border: 0!important;
+border-color: transparent!important;
+}
+#orderConfirmationPage .separator .oCol20f3
+{
+    width:100%
+}
+#orderConfirmationPage #orderSummary
+{
+    float:right;
+    clear:left;
+}
+#orderConfirmationPage table.tblCart.top-space {
+border-top: solid 2px #666;
+margin-top: 24px;
+float: left;
+}
+#orderConfirmationPage .oCol2of3,
+#orderConfirmationPage .noteblock,
+#page_orderDetails .noteblock {
+width: 100%;
+}
+
+#myListPage .oCol1of3 {
+    display:none;
+}
