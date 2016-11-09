@@ -28,17 +28,12 @@
       <tr>
         <td>Total:</td>
         <td>
-          <%= number_to_currency(current_order.order_total) %>
+          <%= number_to_currency(@order.order_total) %>
         </td>
       </tr>
     </tfoot>
   </tbody>
 </table>
-
-<br>
-
-
-
-
-
-<%= link_to 'Back', orders_path %>
+<div class="row">
+  <%= link_to 'Back to Profile', :back, class: 'btn' %>
+</div>
