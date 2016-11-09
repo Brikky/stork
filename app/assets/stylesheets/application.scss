@@ -25,6 +25,10 @@ body {
     flex-wrap: wrap;
     justify-content: space-between;
 }
+
+.row:after{
+  content: none !important;
+}
 .align-bottom{
   display:flex;
   align-items: baseline;
