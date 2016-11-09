@@ -1,5 +1,5 @@
 <h3>Order Number <%= params[:id]%></h3>
-<h5 class = "grey-text">Completed <%= @order.updated_at%> </h5>
+<h5 class = "grey-text">Completed <%= @order.updated_at.strftime("%d %b. %Y")%> </h5>
 <table>
   <thead>
     <tr>
