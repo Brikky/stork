@@ -21,7 +21,7 @@
       </th>
     </thead>
       <% current_user.orders.each do |order| %>
-      <% if order.status = "paid"%>
+      <% if order.status == "paid"%>
         <tr>
           <td></td>
           <td class = "center-align"><%= order.items.count %></td>
@@ -35,5 +35,4 @@
   </table>
 </div>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

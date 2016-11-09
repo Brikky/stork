@@ -12,7 +12,7 @@ class Users::SessionsController < Devise::SessionsController
     if current_user && session[:order_id]
         current_user.current_order.merge_order(Order.find(session[:order_id]))
       else
-      session[:order_id] = current_user.orders.find_by(status: 'open')
+      session[:order_id] = current_user.current_order
     end
   end
 

@@ -25,6 +25,10 @@ body {
     flex-wrap: wrap;
     justify-content: space-between;
 }
+
+.row:after{
+  content: none !important;
+}
 .align-bottom{
   display:flex;
   align-items: baseline;
@@ -32,6 +36,10 @@ body {
 
 .nav-wrapper {
     width: 100%;
+}
+
+.inline{
+  display: inline;
 }
 
 .card-img {
