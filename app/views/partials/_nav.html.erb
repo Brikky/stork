@@ -17,6 +17,7 @@
         <% if user_signed_in? %>
           <span>Hi <%= current_user.first_name %> </span>
           <span><%= link_to "Log Out", destroy_user_session_path, method: :delete %></span>
+          <span><%= link_to "Profile", user_path(current_user) %></span>
         <% end %>
     </div>
   </div>
