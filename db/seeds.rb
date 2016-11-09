@@ -128,21 +128,21 @@ items = [
     description: 'green apple fruit chew',
     price: 1.29,
     stock: 20,
-    image: File.new(Rails.root.to_s + '/app/assets/images/apple-Hi-Chew.png')
+    image: File.new(Rails.root.to_s + '/app/assets/images/apple-hi-chew.png')
   },
   {
     name: 'Cherry Hi-Chew',
     description: 'cherry fruit chew',
     price: 1.29,
     stock: 20,
-    image: File.new(Rails.root.to_s + '/app/assets/images/cherry-Hi-Chew.png')
+    image: File.new(Rails.root.to_s + '/app/assets/images/cherry-hi-chew.png')
   },
   {
     name: 'Grape Hi-Chew',
     description: 'grape fruit chew',
     price: 1.29,
     stock: 20,
-    image: File.new(Rails.root.to_s + '/app/assets/images/Hi-Chew-Grape.png')
+    image: File.new(Rails.root.to_s + '/app/assets/images/hi-chew-Grape.png')
   },
   {
     name: 'Jelly Belly Jelly Beans',
