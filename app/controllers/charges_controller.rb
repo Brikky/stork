@@ -2,14 +2,20 @@ class ChargesController < ApplicationController
   before_action :authenticate_user!
 
   def new
-    @order = Order.find(session[:order_id])
+    @order = current_order
     # Amount in cents
+       unavailable_items = @order.items_unavailable
+       unless unavailable_items.length == 0
+         flash[:error] = "items #{unavailable_items.to_sentence} have a limited stock.Amounts available are #{@order.amount_available.to_sentence}. Please update your order before checkout."
+       end
+
   end
 
   def create
     begin
-      @order = Order.find(session[:order_id])
+      @order = current_order
       # Amount in cents
+
 
       customer = Stripe::Customer.create(
         email: params[:stripeEmail],

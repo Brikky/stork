@@ -9,7 +9,9 @@
         </div>
         <div class="card-content">
             <span class=" activator grey-text text-darken-4"><h5><%= item.name %></h5></span>
+            <span class = "grey-text"><h6><%=item.stock %> available</h6></span>
             <div>
+
                 <%= form_for OrderItem.new, url: order_items_path do |f| %>
                 <%= f.hidden_field :item, :value => item.id %>
                 <div class = "purchase-container"><%= f.number_field :quantity, min: 1, placeholder:'amount', class:'purchase-amount'%>
