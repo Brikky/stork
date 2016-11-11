@@ -12,7 +12,7 @@ class Order < ApplicationRecord
     end
   end
 
-  def handle_payment
+  def update_to_paid
     self.status = 'paid'
     order_items.each do |oi|
       oi.purchase_price = oi.item.price
