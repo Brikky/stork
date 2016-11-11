@@ -64,7 +64,7 @@ class OrdersController < ApplicationController
       format.html { redirect_to root_path, notice: "Cart cleared." }
       format.json { head :no_content }
     end
-    new_current_order
+    # new_current_order
 
   end
 
@@ -79,12 +79,12 @@ class OrdersController < ApplicationController
       params.fetch(:order, {})
     end
 
-    def new_current_order
-      if current_user
-        Order.create({status:'open',user_id: current_user.id})
-      else
-        order = Order.create({status:'open'})
-        session[:order_id] = order.id
-      end
-    end 
+    # def new_current_order
+    #   if current_user
+    #     Order.create({status:'open',user_id: current_user.id})
+    #   else
+    #     order = Order.create({status:'open'})
+    #     session[:order_id] = order.id
+    #   end
+    # end 
 end
