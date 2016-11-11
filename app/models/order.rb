@@ -13,11 +13,12 @@ class Order < ApplicationRecord
   end
 
   def update_to_paid
-    self.status = 'paid'
+    self.update_attribute(:status, 'paid')
     order_items.each do |oi|
       oi.purchase_price = oi.item.price
       oi.item.stock -= oi.quantity
       oi.save
+
     end
   end
 

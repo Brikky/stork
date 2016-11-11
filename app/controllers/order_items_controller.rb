@@ -4,7 +4,7 @@ class OrderItemsController < ApplicationController
   # GET /order_items
   # GET /order_items.json
   def index
-    @order_items = current_order.order_items
+    @order_items = Order.current(session[:order_id], current_user).order_items
   end
 
   # GET /order_items/1
@@ -24,6 +24,7 @@ class OrderItemsController < ApplicationController
   # POST /order_items
   # POST /order_items.json
   def create
+    current_order = Order.current(session[:order_id], current_user)
     if current_order.order_items.exists?(item_id: order_item_params[:item_id])
       @order_item = current_order.order_items.find_by(item_id: order_item_params[:item_id])
       @order_item.update_attribute(:quantity, @order_item.quantity + order_item_params[:quantity].to_i)
@@ -68,6 +69,7 @@ class OrderItemsController < ApplicationController
   def order_item_params
     quantity = params[:order_item][:quantity]
     quantity = 1 if quantity.nil? || quantity.empty?
-    { order_id: current_order.id, item_id: params[:order_item][:item], quantity: quantity }
+    { order_id: Order.current(session[:order_id], current_user).id,
+      item_id: params[:order_item][:item], quantity: quantity }
   end
 end
