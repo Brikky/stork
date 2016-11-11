@@ -71,3 +71,5 @@ class OrderItemsController < ApplicationController
     { order_id: current_order.id, item_id: params[:order_item][:item], quantity: quantity }
   end
 end
+
+# test
