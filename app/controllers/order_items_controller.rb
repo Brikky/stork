@@ -62,5 +62,3 @@ class OrderItemsController < ApplicationController
     @order_item.update_attribute(:quantity, @order_item.quantity + order_item_params[:quantity].to_i)
   end
 end
-
-# test
