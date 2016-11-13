@@ -12,6 +12,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     respond_to do |format|
+
       if @user.save
         format.html { redirect_to @user, notice: 'Im in user UsersController' }
         format.json { render :show, status: :created, location: @user }
