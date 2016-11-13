@@ -43,7 +43,7 @@ class OrderItemsController < ApplicationController
 
   def order_item_params
     quantity = params[:order_item][:quantity]
-    quantity = 1 if quantity.nil? || quantity.empty?
+    quantity = 1 if quantity.nil? || quantity.empty? || quantity < 1
     { order_id: Order.current(session[:order_id], current_user).id,
       item_id: params[:order_item][:item], quantity: quantity }
   end
