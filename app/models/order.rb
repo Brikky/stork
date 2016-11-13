@@ -30,6 +30,8 @@ class Order < ApplicationRecord
       else
         Order.create(user_id: user.id)
       end
+    elsif order_id.blank? || order_id.nil?
+      Order.create()
     else
       Order.find(order_id)
     end
