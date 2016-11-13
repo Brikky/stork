@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   devise_for :users, :controllers => {:sessions => "users/sessions"}
   resources :order_items, except: [:show]
-  resources :orders, except: [:edit]
+  resources :orders, except: [:edit, :update]
   resources :items, only: [:show]
   resources :users, except: [:destroy]
   resources :charges, only: [:new, :create]
