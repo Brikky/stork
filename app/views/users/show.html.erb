@@ -20,7 +20,7 @@
       <th class = "center-align">Date</th>
       </th>
     </thead>
-      <% current_user.orders.each do |order| %>
+      <% current_user.orders.reverse.each do |order| %>
       <% if order.status == "paid"%>
         <tr>
           <td></td>
@@ -35,4 +35,3 @@
   </table>
 <%= link_to 'Back to store', root_path, class: 'btn' %>
 </div>
-

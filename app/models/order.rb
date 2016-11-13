@@ -12,16 +12,32 @@ class Order < ApplicationRecord
     end
   end
 
-  def handle_payment
-    self.status = 'paid'
+  def update_to_paid
+    self.update_attribute(:status, 'paid')
     order_items.each do |oi|
       oi.purchase_price = oi.item.price
       oi.item.stock -= oi.quantity
       oi.save
+
     end
   end
 
-  def merge_order(order)
+  def self.current(order_id, user=nil) # from session // current_user
+    if user
+      order = user.orders.find_by(status: 0)
+      if order
+        order
+      else
+        Order.create(user_id: user.id)
+      end
+    elsif order_id.blank? || order_id.nil?
+      Order.create()
+    else
+      Order.find(order_id)
+    end
+ end
+
+  def merge(order)
     return if id == order.id
     order.order_items.each do |oi|
       oi.order_id = id
@@ -36,7 +52,6 @@ class Order < ApplicationRecord
     order_items.each do |oi|
       check_stock << oi.item.name if oi.quantity > oi.item.stock
     end
-
     check_stock
   end
 
