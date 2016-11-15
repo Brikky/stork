@@ -1,36 +1,30 @@
-# shop-app
-![](https://github.com/Brikky/shop-app/blob/master/public/ShopApp2.gif)
+# Stork
+___
+Ruby on Rails ecommerce platform hosted through Amazon Web Services.
+Designed and developed over week long sprint in a group of four developers.
 
-## Description
-* Please refere to about page:
- - [Link to Heroku](https://stork-store.herokuapp.com/)
- 
- ---------------------------------------------------------------------------------------------------
-## Technologies:
+### URL: [storkstore.us](https://www.storkstore.us)
 
-- HTML / CSS/ SASS
-- JavaScript/jQuery
-- Materialize
+### Features
+* Users can access their cart items across machines
+* Guest users can view items, add items to cart
+* Responsive display
+
+### Technologies Used
+_____
+- HTML / CSS / SASS
+- JavaScript / jQuery
+- Amazon Web Services
+- RSpec
 - Ruby on Rails 
-- Stripe( for payment )
+- Materialize
+- Stripe
 - Devise
 - Paperclip
-- Rspec ( for testing )
 
-## Milestones
- 1. Items/ Orders
- 2. Items/ Orders/ Payments
- 3. Items/ Orders/ Payments/ Quantity
- 4. Items/ Orders/ Payments/ Quantity/ Users/ Location
- 
- 
-## Schema:
+## Planning
+___
 ![](https://dl.dropboxusercontent.com/s/flnrhwhdt9rcxzm/final.jpg?dl=0)
-
-
-
-
-## Wireframes and User Stories:
 
 ### User Flow:
 - User can add items to a cart without being logged in
@@ -77,16 +71,48 @@
 ![](https://dl.dropboxusercontent.com/s/nur3mwjau9bx0bc/checkout2.jpg?dl=0)
 ![](https://dl.dropboxusercontent.com/s/ijugblorecnrtbi/checkout3.jpg?dl=0)
 
+## Code Examples
+___
 
-## Future Work:
+```Ruby
+# Order#order_total ensures total prices are accurately calculated for both
+# current carts, and past orders - regardless of changes to item price
+def order_total
+    if open?
+      order_items.map { |oi| oi.item[:price] * oi[:quantity].to_f }.reduce(0.0, :+)
+    else
+      order_items.map { |oi| oi[:purchase_price] * oi[:quantity].to_f }.reduce(0.0, :+)
+    end
+  end
+```
 
-adding features:
-- Mail confirmation
-- PDF for receipe 
-- Finishing the OmniAuth
-- Add edit profile feature for users
-- Adding categories and brands
-- Adding order by price feature
+```Ruby
+# Order#merge is called when a user has added items to the cart and then logs in
+def merge(order)
+    return if id == order.id
+    order.order_items.each do |oi|
+      oi.order_id = id
+      order_items.push(oi)
+    end
+    save
+    order.delete
+  end
+```
 
+### Future Work:
 
-[Project Requirements and Description](https://github.com/sf-wdi-gaia/project-03#project-planning-deliverables)
+- Mail confirmation for purchases, signup
+- PDF receipts
+- User login via omniauth
+- Users can edit profiles
+- Add item categories, brands - for searching
+
+### Screenshots
+___
+Main Page
+
+![Index](http://i.imgur.com/BywLCeN.png)
+
+Cart
+
+![Cart Page](http://i.imgur.com/tVBoFtW.png)
