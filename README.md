@@ -22,6 +22,34 @@ _____
 - Devise
 - Paperclip
 
+## Code Examples
+___
+
+```Ruby
+# Order#order_total ensures total prices are accurately calculated for both
+# current carts, and past orders - regardless of changes to item price
+def order_total
+    if open?
+      order_items.map { |oi| oi.item[:price] * oi[:quantity].to_f }.reduce(0.0, :+)
+    else
+      order_items.map { |oi| oi[:purchase_price] * oi[:quantity].to_f }.reduce(0.0, :+)
+    end
+  end
+```
+
+```Ruby
+# Order#merge is called when a user has added items to the cart and then logs in
+def merge(order)
+    return if id == order.id
+    order.order_items.each do |oi|
+      oi.order_id = id
+      order_items.push(oi)
+    end
+    save
+    order.delete
+  end
+```
+
 ## Planning
 ___
 ![](https://dl.dropboxusercontent.com/s/flnrhwhdt9rcxzm/final.jpg?dl=0)
@@ -70,34 +98,6 @@ ___
 ![](https://dl.dropboxusercontent.com/s/nlqlzed32lq0k1r/checkout1.jpg?dl=0)
 ![](https://dl.dropboxusercontent.com/s/nur3mwjau9bx0bc/checkout2.jpg?dl=0)
 ![](https://dl.dropboxusercontent.com/s/ijugblorecnrtbi/checkout3.jpg?dl=0)
-
-## Code Examples
-___
-
-```Ruby
-# Order#order_total ensures total prices are accurately calculated for both
-# current carts, and past orders - regardless of changes to item price
-def order_total
-    if open?
-      order_items.map { |oi| oi.item[:price] * oi[:quantity].to_f }.reduce(0.0, :+)
-    else
-      order_items.map { |oi| oi[:purchase_price] * oi[:quantity].to_f }.reduce(0.0, :+)
-    end
-  end
-```
-
-```Ruby
-# Order#merge is called when a user has added items to the cart and then logs in
-def merge(order)
-    return if id == order.id
-    order.order_items.each do |oi|
-      oi.order_id = id
-      order_items.push(oi)
-    end
-    save
-    order.delete
-  end
-```
 
 ### Future Work:
 
