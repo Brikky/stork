@@ -50,6 +50,20 @@ def merge(order)
   end
 ```
 
+### Screenshots
+___
+Main Page
+
+![Index](http://i.imgur.com/BywLCeN.png)
+
+Cart
+
+![Cart Page](http://i.imgur.com/tVBoFtW.png)
+
+Item Page
+![Item Show](http://i.imgur.com/rNH2uZC.png)
+
+
 ## Planning
 ___
 ![](https://dl.dropboxusercontent.com/s/flnrhwhdt9rcxzm/final.jpg?dl=0)
@@ -107,12 +121,3 @@ ___
 - Users can edit profiles
 - Add item categories, brands - for searching
 
-### Screenshots
-___
-Main Page
-
-![Index](http://i.imgur.com/BywLCeN.png)
-
-Cart
-
-![Cart Page](http://i.imgur.com/tVBoFtW.png)
