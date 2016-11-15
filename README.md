@@ -3,7 +3,7 @@ ___
 Ruby on Rails ecommerce platform hosted through Amazon Web Services.
 Designed and developed over week long sprint in a group of four developers.
 
-### URL: [storkstore.us](https://www.storkstore.us)
+### URL: [storkstore.us](http://www.storkstore.us)
 
 ### Features
 * Users can access their cart items across machines
