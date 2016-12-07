@@ -18,7 +18,6 @@ class Order < ApplicationRecord
       oi.purchase_price = oi.item.price
       oi.item.stock -= oi.quantity
       oi.save
-
     end
   end
 
